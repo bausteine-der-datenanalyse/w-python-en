@@ -1,0 +1,94 @@
+# Importing Modules and Packages
+Python's functionality can be significantly extended by importing modules and packages. Modules and packages are libraries that contain function definitions.
+
+:::{#imp-modules-and-packages .callout-important}
+# Modules and Packages
+
+Modules
+: Modules are files that contain function definitions.
+: Modules are imported using the `import` keyword followed by their name, e.g., `import glob`.
+
+Packages
+: Packages are collections of modules.
+: Modules contained in packages are imported using the `import` keyword with the syntax package.module, e.g., `import matplotlib.pyplot`.
+
+:::
+
+Modules and packages are loaded in Python using the `import` keyword.  
+For example, the module responsible for generating (pseudo-)random numbers, `random`, can be imported with `import random`. Afterwards, the functions of the module are available under the module name using the syntax `module.function()`.
+
+```{python}
+import random
+
+print(random.randint(1, 10)) # Random integer between 1 and 10
+```
+
+The Matplotlib package provides many functions for the graphical representation of data. The module `matplotlib.pyplot` provides an interface to the functions it contains.
+
+```{python}
+#| fig-cap: Plot using the pyplot module from the matplotlib package
+#| fig-alt: "Display of ten random numbers with no particular meaning"
+
+import matplotlib.pyplot
+
+random_data = []  # create an empty list
+for i in range(10):
+    random_number = random.randint(1, 10)
+    random_data.append(random_number)
+
+matplotlib.pyplot.plot(random_data)
+```
+
+&nbsp;
+
+:::{#wrn-fromimport .callout-warning appearance="simple"}
+# Importing Functions Directly into the Namespace
+In Python, it is also possible to import functions directly into the Python namespace, so they can be used without the `module.function()` syntax. This can be done using the `from` keyword.
+
+```{python}
+from random import randint
+print(f"The function randint is now available directly: {randint(1, 100)}")
+```
+
+Through `from modulename import *`, it is even possible to import all functions from a module directly into Python’s namespace. However, in general, directly importing functions or an entire module into Python’s namespace should be avoided. On one hand, this risks namespace collisions—for example, the `sum()` function exists in base Python, in NumPy, and in Pandas. On the other hand, it makes the code less readable, since it is no longer clear which module a used function comes from.
+
+:::
+
+## import as
+To simplify long module names, the `as` keyword can be used when importing to assign a new name to the module.
+
+```{python}
+#| fig-cap: Plot using the pyplot module from the matplotlib package
+#| fig-alt: "Visualization of ten random numbers without meaningful content"
+
+import matplotlib.pyplot as plt
+
+plt.plot(random_data)
+```
+
+&nbsp;
+
+For frequently used modules, certain abbreviations have become standard. In the exercises, the following packages and abbreviations are commonly used:
+
+| Module | Abbreviation | Command |
+|---|---|---|
+| NumPy | np | import numpy as np |
+| Pandas | pd | import pandas as pd |
+| matplotlib.pyplot | plt | import matplotlib.pyplot as plt |
+
+## Small Module Overview
+Since it is not possible to cover all these modules, only a few modules that might be relevant for the target audience of this script are listed below. *Note: The proper names of some modules use capitalization, e.g., the NumPy module. However, when importing the modules, the names are written in lowercase.* Therefore, capitalization is omitted in the following list.
+
+* **math**: mathematical functions and constants  
+* **scipy**: scientific functions  
+* **sys**: interaction with the Python interpreter  
+* **os**: interaction with the operating system  
+* **glob**: searching through filesystem paths  
+* **multiprocessing / threading**: parallel programming with processes / threads  
+* **matplotlib**: data visualization and figure creation  
+* **numpy**: numerical operations and functions  
+* **pandas**: reading and analyzing data  
+* **time**: time functions
+
+&nbsp;  
+(@Arnold-2023-funktionen-module-dateien)

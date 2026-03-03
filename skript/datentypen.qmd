@@ -1,0 +1,526 @@
+# Data Types
+Objects that store data have a data type. The data type specifies how the stored values should be interpreted by Python. For example, the value "1" in Python can represent a character, an integer, a Boolean value, the month of January, the weekday Tuesday, or the level of a categorical variable.
+
+In this section, the data types that are most important for data analysis are introduced.
+
+## Numbers
+Numbers include integers, Boolean values (truth values), floating-point numbers, and complex numbers (which are not discussed further here).
+
+### Integers
+Integers are entered in decimal notation by default and can be positive or negative.
+
+```{python}
+print(12, -8)
+```
+
+In addition, integers can also be specified in other bases:
+
+* Binary system: digits `0` and `1` with the prefix `0b` 
+```{python}
+print(0b1000, "plus", 0b0000, "plus", 0b0010, \
+      "plus", 0b0001, "is", 0b1011)
+```
+
+* Octal system: digits `0` to `7` with the prefix `0o`
+```{python}
+print(0o7000, "plus", 0o0700, "plus", 0o0020, \
+      "plus", 0o0000, "is", 0o7720)
+```
+
+* Hexadecimal system: digits `0` to `F` with the prefix `0x`
+```{python}
+print(0xF000, "plus", 0x0200, "plus", 0x00A0, \
+      "plus", 0x0001, "is", 0xF2A1)
+```
+
+### Floating-Point Numbers
+Floating-point numbers are written either with the decimal point `.` or in exponential notation. Floating-point numbers have the type `float`.
+
+```{python}
+print(120.6, 1206e-1, 12060e-2, "\n")
+
+print("When representing lottery winnings in exponential notation, the sign matters.")
+print(1e-3, "or", 1e+3)
+```
+
+Since computers operate in the binary system, decimal numbers cannot be stored exactly. For example, the division of 1 by 10 in decimal is 0.1. In binary, 1₂ divided by 1010₂ is a repeating fraction:
+
+$$ \frac{1_2}{1010_2} ~ {=} ~ 0,000\overline{1100}_2 $$
+
+Therefore, decimal numbers must be approximated as a fraction of two integers (the binary fraction that approximates 0.1 is, in decimal notation, 3602879701896397 / 2^55^). As a result, multiple floating-point numbers can be represented by the same binary approximation. Python outputs the shortest decimal representation, but since calculations are performed in binary, the nearest binary approximation—and therefore the corresponding shortest decimal—can change during computations (more information in the [Python documentation](https://docs.python.org/3/tutorial/floatingpoint.html)).
+
+```{python}
+print(0.1)  # The shortest decimal representation of the binary approximation
+print(format(0.1, '.17g'))  # The next longer decimal representation of the same binary approximation
+print(0.3 - 0.2)  # Computed in binary, the binary approximation may change
+```
+
+In practical work with Python, you may occasionally encounter results that seem unusual at first glance.
+```{python}
+print(0.1 + 0.2)
+print(0.01 + 0.02)
+print(0.001 + 0.002)
+print(0.0001 + 0.0002)
+print(0.00001 + 0.00002)
+```
+
+## Arithmetic Operators
+Arithmetic operators allow you to perform basic calculations. The result is usually of type `float`, except when both operands are of type `int` and the result can be represented as an integer.
+
+| Operator | Description |
+| :--: | :--: |
+| `+`, `-` | Addition / Subtraction |
+| `*`, `/` | Multiplication / Division |
+| `//`, `%` | Integer Division / Remainder |
+| `**` | Exponentiation |
+
+&nbsp;
+
+When combining multiple operators, their order must be respected or enforced using parentheses, e.g., `(1 + 2) * 3`. The same rules as in standard arithmetic apply. A complete overview of operator precedence is available in the [Python documentation](https://docs.python.org/3/reference/expressions.html#operator-precedence). For arithmetic operators, the precedence from highest to lowest is:
+
+| Operator |
+| :--: |
+| `**` |
+| `*`, `/`, `//`, `%` |
+| `+`, `-` |
+
+Operators of the same precedence are evaluated from left to right.
+
+## Number Exercises
+**Solve the following exercises using Python.**
+
+1. 4 + 2 * 4 = ?
+2. 2 to the power of 12 = ?
+3. What is the remainder when 315 is divided by 4?
+4. 1 + 2<sup>6</sup> / 5 = ?
+5. What decimal number does 11111101001₂ represent?
+6. 11111101001₂ / 101₂ = ?
+7. Which investment yield is higher if 1000 euros are invested?
+
+    a) 20 years with an annual return of 3%
+
+    b) 30 years with an annual return of 2%
+
+::: {#tip-solution-numbers .callout-tip collapse="true"}
+## Sample Solution Numbers
+
+:::: {.border}
+
+```{python}
+# 1.
+print('4 + 2 * 4 =', 4+2*4, '\n')
+# 2.
+print('2 to the power of 12 =', 2**12, '\n')
+# 3.
+print('Remainder of 315 divided by 4 =', 315%4, '\n')
+# 4.
+print('1 + 2^6 / 5 =', 1+(2**6)/5, '\n')
+# 5.
+print('binary 11111101001 is decimal =', 0b11111101001, '\n')
+# 6.
+print('binary 11111101001 / 101 is decimal =', 0b11111101001/0b101, '\n')
+# 7.
+option_a = 1000*1.03**20
+print(f'after 20 years at 3% = {option_a:.2f}')
+option_b = 1000*1.02**30
+print(f'after 30 years at 2% = {option_b:.2f}')
+```
+
+Sample Solution by Marc Sönnecken
+::::
+:::
+
+## Boolean Values
+The boolean values `True` and `False` are the result of logical expressions, which we will explore in more detail later. They also take the values `1` and `0` and therefore belong to the number type in Python.
+```{python}
+print("Is 10 greater than 9?", 10 > 9)
+print("Is 11 less than 10?", 11 < 10)
+print("Is 10 exactly 10.0?", 10 == 10.0, "\n")
+
+print("True and False can be added using +:", True + False)
+print("... and multiplied using *:", True * False, "\n")
+```
+
+Multiplying Boolean values is useful for combining multiple logical conditions into a logical AND:
+```{python}
+print("Is 10 > 9 AND 10 > 8?", (10 > 9) * (10 > 8))
+```
+
+The `bool()` function returns the truth value of a value.
+
+```{python}
+print("Is 10 > 9 AND > 8?", bool((10 > 9) * (10 > 8)))
+```
+
+Most values in Python have the truth value `True`.
+```{python}
+print(bool(1), bool(2), bool(2.4))
+print(bool('a'), bool('b'), bool('ab'))
+```
+
+Besides `False` and `0`, empty or non-existent values or objects evaluate to `False`.
+
+```{python}
+print(bool(False), bool(0))
+print(bool("")) # an empty string
+print(bool([])) # an empty list
+print(bool(())) # an empty tuple
+print(bool({})) # an empty dictionary
+print(bool(None)) # None represents a non-existent value
+```
+
+The collection types list, tuple, and dictionary will be introduced in the following chapters. Boolean values can control the execution of program code by acting like `on` and `off`. This way, code with an `if` statement is only executed if a collection type actually contains values.
+
+```{python}
+my_list = ['Apples', 'Butter']
+if my_list:
+    print(f"We need to buy {my_list}.")
+
+my_list = []  # an empty list
+if my_list:
+    print(f"We need to buy {my_list}.")
+```
+
+
+## Logical Operators
+Logical operators include the logical connections `and`, `or`, and `not`. In addition, comparison operators such as `>`, `>=`, or `==` can also be used. The result of these operations is of type `bool`. Operators are executed in the following order. Operators of the same precedence are executed from left to right.
+
+| Operator | Description |
+| :--: | :--: |
+| `&` | bitwise AND |
+| `^` | bitwise XOR |
+| `|` | bitwise OR |
+| `<`, `<=`, `>`, `>=`, `!=`, `==` | less than / less than or equal / greater than / greater than or equal / not equal / equal |
+| `not` | logical NOT |
+| `and` | logical AND |
+| `or` | logical OR |
+
+::: {#wrn-bitwise .callout-warning appearance="simple" collapse="false"}
+## Bitwise Operators
+Special caution is required with [bitwise operators](https://wiki.python.org/moin/BitwiseOperators). These do not compare numbers as a whole, but rather bit by bit (in the binary system). Note that bitwise operators have higher precedence than comparison operations.
+
+```{python}
+print(10 > 5 and 10 > 6)
+print(10 > 5 & 10 > 6)
+print(5 & 10)
+print(10 > False > 6)
+print((10 > 5) & (10 > 6))
+```
+
+:::: {.callout-tip collapse="false"}
+In general, bitwise operators are not needed for data analysis. Avoid unnecessary mistakes: do not use the bitwise operators `&`, `^`, and `|`.
+
+However, the operators `&`, `^`, and `|` have a different meaning for sets (which we will cover later). In other modules, these operators also have a different syntactic role, e.g., in the Pandas package when passing multiple slicing conditions: `df = df[(condition1) & (condition2) | (condition3)]`.
+
+::::
+:::
+
+## Boolean Value Exercises
+**Solve the exercises using Python.**
+
+1. Is the ratio of 44 to 4.5 greater than 10?
+2. Is it true that 4.5 is greater than 4 but less than 5?
+3. Is 2 to the power of 10 equal to 1024?
+4. Are the numbers 3, 4, and 5 divisible by 2 OR not equal to 10?
+5. Check whether a person has to pay the full price based on their age.  
+Adults pay full price. Children under 14 travel for free. Teenagers from 14 up to 18 years old and seniors from 65 years onwards get a discount.
+
+::: {#tip-solution-boolean .callout-tip collapse="true"}
+## Sample Solution for Boolean Values
+
+:::: {.border}
+
+```{python}
+# 1.
+print('Is 44/4.5 greater than 10?', 44/4.5 > 10)
+# 2.
+print('Is 4.5 greater than 4 but less than 5?', 4 < 4.5 and 4.5 < 5)
+# 3.
+print('Is 2 to the power of 10 equal to 1024?', 2**10 == 1024)
+# 4.
+print('Are the numbers 3, 4, and 5 divisible by 2 OR not equal to 10?')
+print('3:', 3%2 == 0 or 3 != 10)
+print('4:', 4%2 == 0 or 4 != 10)
+print('5:', 5%2 == 0 or 5 != 10)
+# 5. Check age
+
+# Variable for the age to check
+age = 17
+print('Age =', age)
+
+print('The person has to pay full price:', age >= 18 and age < 65)
+print('The person gets a discount:', age >= 14 and age < 18 or age >= 65)
+print('The person travels for free:', age < 14)
+
+```
+
+Sample Solution by Marc Sönnecken and Maik Poetzsch
+::::
+:::
+
+## Strings
+Strings are enclosed in single or double quotes in Python.
+
+```{python}
+print('a string')
+print("another string")
+```
+
+Within a string, single or double quotes can be used, as long as they don’t match the quotes surrounding the string.
+```{python}
+print('A sophisticated heap beam, which we call a "LASER".')
+print("I've turned the moon into what I like to call a 'Death Star'.")
+```
+
+The control character `\` (also called the escape character) allows you to use certain special characters. 
+```{python}
+print("The control character \\ allows the same \"quotation marks\" in the output of print.")
+print("First a\tTab, then a\nnew line.")
+```
+
+A prefixed `r` makes the backslash `\` treated literally (raw string literal). This is useful, for example, when working with file paths.
+
+```{python}
+#| warning: false
+
+print("The data is located at: C:\tolle_daten\nordpol\weihnachtsmann")
+print(r"The data is located at: C:\tolle_daten\nordpol\weihnachtsmann")
+```
+
+## String Operations
+Some operators also work with data of type string.
+
+```{python}
+
+# string + string
+print('a' + 'b')
+
+# string * number
+print(15 * 'a')
+
+# logical operators
+print('a' < 'b', 'a' >= 'b', 'a' != 'b')
+print('a' or 'b', 'a' and 'b')
+```
+
+## String Exercises
+**Solve the exercises using Python.**
+
+1. What happens if you add the string `"Python"` with `"for beginners"`?
+2. Create a string that contains the string `"tick tack"` 10 times.
+3. Which string is smaller, `"Aachen"` or `"Bern"`? Why is that, and how are strings compared?
+4. Print the file path: `"~\home\tobi\new_data"`
+
+::: {#tip-solution-strings .callout-tip collapse="true"}
+## Example Solution for String Exercises
+
+:::: {.border}
+
+```{python}
+# 1.
+print("Python" + " for beginners")  # The two strings are concatenated directly, without any space in between
+# 2.
+print(10 * "tick tack")
+# 3.
+print("Aachen" < "Bern")  # Unicode values of the characters are compared
+# 4.
+print(r"~\home\tobi\new_data")  # Python interprets the backslash "\" as an escape character. To prevent this in file paths, the path is printed as a raw string using r"
+```
+
+Sample Solution by Marc Sönnecken
+
+::::
+::: 
+
+## Variables
+Variables are placeholders or references to data. Assignment is done using the assignment operator `=`. A variable name may only consist of letters, numbers, and underscores. The first character cannot be a number.
+
+```{python}
+var_1 = 'ABC'
+var_2 = 26
+var_3 = True
+
+print("The", var_1, "has", var_2, "letters. This is", var_3)
+```
+
+In Python, variables do not need to be initialized. The data type of a variable is determined by assigning an appropriate value.
+
+```{python}
+print("The variable var_1 has the type", type(var_1))
+print("The variable var_2 has the type", type(var_2))
+print("The variable var_3 has the type", type(var_3))
+```
+
+The data type of a variable changes when it is assigned a new value of a different data type.
+```{python}
+var_1 = 100
+print("The variable var_1 has the type", type(var_1))
+```
+
+Similarly, the data type of a variable can change to accommodate the result of an operation. In this example, the result cannot be stored as an integer. Python therefore assigns the data type 'float' to the object `var_1`.
+```{python}
+var_1 = var_1 / 11
+print("The variable var_1 has the type", type(var_1))
+```
+
+Python provides functions to determine the data type of a variable and to convert it. The function `type()` has already been used in the code examples to check the data type (i.e., class) of objects. The following code block demonstrates type conversion.
+
+``` {python}
+a = 67
+print(a, type(a))
+
+b = a + 1.8
+print(b, type(b), "\n")
+
+print(f"Note the truncation of the decimal part:\nConverting to integers with int(): {(a := int(a)), (b := int(b))}\n")
+
+print(f"Converting to ASCII characters with chr(): {(a := chr(a)), (b := chr(b))}\n")
+
+print(f"Converting to an ASCII number with ord(): {(a := ord(a)), (b := ord(b))}\n")
+
+print(f"Converting to floating-point numbers with float(): {(a := float(a)), (b := float(b))}\n")
+
+print(f"Converting to strings with str(): {(a := str(a)), (b := str(b))}\n")
+
+print(f"Converting to Boolean values with bool(): {bool(a), bool(b)}")
+``` 
+
+
+### Additional Assignment Operators
+In the code block above, the so-called [Walrus Operator](https://docs.python.org/3/whatsnew/3.8.html) `:=` was used. This allows assignments to be made within an expression (here, inside the `print()` function). Python has a variety of other assignment operators (see the [Python documentation](https://docs.python.org/3/reference/simple_stmts.html) or a more user-friendly overview [here](https://www.w3schools.com/python/python_operators.asp)).
+
+| Operator | Equivalent Assignment |
+|---|---|
+| a += 2 | a = a + 2 |
+| a -= 2 | a = a - 2 |
+| a *= 2 | a = a * 2 |
+| a /= 2 | a = a / 2 |
+| a %= 2 | a = a % 2 |
+| a //= 2 | a = a // 2 |
+| a **= 2 | a = a ** 2 |
+
+::: {#tip-assignment .callout-tip collapse="false"}
+## Readable Assignments
+The assignment operators shown in the table are easy to read and understand for someone reviewing your code, as assignments always appear at the start of a line, aligned to the left.
+
+In contrast, the Walrus Operator can appear anywhere in your code. While this can be convenient while writing, it can reduce readability. If you use the Walrus Operator, make sure your code remains understandable.
+:::
+
+### Naming Variables
+There are usually only a few rules for naming variables. Still, it is better to choose a long but descriptive variable name than a short one that is easy to type. Code is read far more often than it is written. Can you remember? What value is stored in the variable `Var_3`, and what values are stored in `variable1` and `a`? It's enough if you can recall the correct data type.
+
+If you can't remember, this is an example of poor naming: these variable names are not descriptive. The solution is in the expandable section below.
+
+::: {#tip-variable-solution .callout-tip collapse="true"}
+## Variable Solution
+
+```{python}
+#| echo: false
+variable1 = 15
+variable2 = 25
+```
+
+```{python}
+print(var_3, type(var_3))
+print(variable1, type(variable1))
+print(a, type(a))
+```
+
+:::
+
+Therefore, it is recommended to use "descriptive," i.e., self-explanatory, variable names. Self-explanatory variable names are those where the name describes the content of the variable. For example, if a variable stores a student's degree, it can be named `academic_degree` or `studienabschluss`. If data from different years are being processed, the year can be included in the variable name for better distinction, e.g., `academic_degree_2023` or `studienabschluss2024`. This improves code readability and makes using the variable easier. More information can be found in [this Wikipedia section](https://en.wikipedia.org/wiki/Variable_(computer_science)#Naming).
+
+::: {#wrn-keywords .callout-warning}
+## Keywords and Function Names
+
+Reserved keywords and function names in Python are unsuitable as variable names. While Python will raise a syntax error if you try to assign a value to keywords like `True` or `break`, function names can be reassigned, for example with `print = 6`. After doing so, calling the `print` function will no longer work. In this case, you must remove the assignment from the script and restart Python.
+
+The following keywords exist in Python:
+
+```
+and        continue   for        lambda     try
+as         def        from       nonlocal   while
+assert     del        global     not        with
+async      elif       if         or         yield
+await      else       import     pass       True
+break      except     in         raise      class
+False      finally    is         return     None
+```
+
+:::
+
+
+## Variable Exercises
+1. Write a script that converts a given time 𝗍 in seconds into the number of days, hours, minutes, and seconds, and prints this breakdown.  
+Calculate the breakdown for the following times:
+
+    a) 79,222 s
+  
+    b) 90,061 s
+  
+    c) 300,000 s
+
+2. The position of a vehicle at time $t$, which accelerates constantly with acceleration $a$, is given by:
+
+$$
+x(t) = x_0 + v_0 \cdot t + \frac{1}{2} \cdot a t^2
+$$
+
+Here, $x_0$ is the initial position and $v_0$ is the initial velocity. Create variables for $x_0$, $v_0$, and $a$, and assign them values. Since the variables only store numerical values without units, consider any necessary unit conversions. You can use the following example values:
+
+$$
+x_0 = 10 \, km \,\,\,v_0 = 50 \frac{km}{h} \,\,\,a = 0.1 \frac{m}{s^2}
+$$
+
+Create a variable for the time $t$, e.g.: $t = 10 \, min$.  
+Use the above equation and your variables to calculate the position $x(t)$.  
+Output not only the value of $x(t)$ in kilometers, but embed it in a full sentence including units.
+
+::: {#tip-solutionvariables .callout-tip collapse="true"}
+## Sample Solution for Variable Exercises
+
+:::: {.border}
+
+1. Exercise
+```{python}
+# 1.
+def time_breakdown(t):
+    days = t // (24*3600)
+    t = t % (24*3600)
+    hours = t // 3600
+    t = t % 3600
+    minutes = t // 60
+    seconds = t % 60
+    
+    return days, hours, minutes, seconds
+
+# Enter the values to check: a, b, c
+given_time = 79222
+
+days, hours, minutes, seconds = time_breakdown(given_time)
+
+print(f"{given_time} seconds correspond to {days} days, {hours} hours, {minutes} minutes, and {seconds} seconds")
+```
+
+2. Exercise
+
+```{python}
+# 2.
+# Initial values including conversions
+x0 = 10*1000 # kilometers to meters
+v0 = 50/3.6 # km/h to m/s
+a = 0.1
+t = 10*60 # minutes to seconds
+
+x = x0 + v0 * t + 0.5 * a * t **2
+
+print(f"The calculated position of the vehicle at time t = {(t/60):.0f} minutes is {(x/1000):.2f} kilometers.")
+```
+
+
+Sample Solution by Marc Sönnecken
+::::
+
+:::
+
+[@Arnold-2023-datentypen-und-grundlagen; @Arnold-2023-funktionen-module-dateien]

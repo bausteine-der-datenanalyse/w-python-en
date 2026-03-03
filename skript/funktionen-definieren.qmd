@@ -1,0 +1,341 @@
+# Defining Your Own Functions
+Defining your own functions opens up a wide range of possibilities in Python:
+
+  - Complex programs can be called and executed with a single line of code.
+
+  - Functions can be called practically any number of times and, through the use of parameters and control flow statements, can flexibly respond to changing conditions.
+
+  - Functions make code shorter and more readable. Additionally, there is only one place that needs to be updated when changes are necessary.
+
+## Syntax
+The keyword `def` starts the function definition. It is followed by the function name and the function parameters, which are enclosed in parentheses `()`. The function header ends with a colon `:`. The function's code block is indented. Every function returns a value, which is passed back to the calling location using the `return` keyword. `return` ends the function's execution, even if it is not at the end of the code block.
+
+``` {python}
+#| output: false
+def function_name(parameter1, parameter2):
+    code_block
+    return return_value
+```
+
+In order for the function to be executed, the defined function name must be called. The function contains another statement after the keyword `return`, which is no longer executed.
+
+```{python}
+# Example 1: Sum of Squares
+
+# Definition of a function to calculate the sum of squares of two arguments
+def sum_squares(a, b):
+    print('Argument a:', a)
+    print('Argument b:', b)
+    print(18 * '=')
+    total = a**2 + b**2
+    return total
+    print("Statements after the 'return' keyword are no longer executed.")
+
+print(sum_squares(6, 7))
+```
+
+The return value can be stored in a variable.
+
+```{python}
+result = sum_squares(6, 7)
+print(result)
+```
+
+## Optional Parameters
+Optional parameters can be used to control the execution of a program. Optional parameters must be defined after the required parameters. In this example, the print output of the function is controlled using the parameter `output`.
+
+```{python}
+# Example 2: optional arguments
+
+# Define a function to calculate the sum of the squares of two arguments
+def sum_squares(a, b, output=False):
+    if output:
+        print('Value of argument a:', a)
+        print('Value of argument b:', b)
+        print(18 * '=')
+    total = a**2 + b**2
+    return total
+
+print(sum_squares(42, 7), "\n")
+print(sum_squares(42, 7, output=True))
+```
+
+If there are multiple optional parameters, arguments are assigned positionally or using the keyword.
+
+```{python}
+# Example 3: multiple optional arguments
+
+# Define a function to calculate the sum of powers of two arguments
+def sum_powers(a, b, p=2, output=False):
+    if output:
+        print('Argument a:', a)
+        print('Argument b:', b)
+        print('Argument p:', p)
+        print(18 * '=')
+    total = a**p + b**p
+    return total
+
+# positional passing
+print(sum_powers(42, 7, 3, True), "\n")
+
+# keyword passing
+print(sum_powers(42, 7, output=True, p=4))
+```
+
+## Return Value(s)
+In Python, functions can only have a single return value. However, multiple values can be separated by commas. Python returns these as a tuple.
+
+```{python}
+# Example 4: multiple return values
+
+# Definition of a function to calculate the sum of powers of two arguments
+def sum_powers(a, b, p = 2, output = False):
+    if output:
+        print('Argument a:', a)
+        print('Argument b:', b)
+        print('Argument p:', p)
+        print(18 * '=')
+    total = a**p + b**p
+    return a, b, total
+
+result = sum_powers(2, 7, output = False, p = 4)
+print(result, type(result))
+```
+
+The slice operator allows you to select a specific return value.
+
+```{python}
+print(result[2])
+
+sum_of_powers = sum_powers(2, 7, output=False, p=4)[2]
+print(sum_of_powers, type(sum_of_powers))
+```
+
+<!-- optional addition
+## Anonymous Functions Lambdas
+<https://docs.python.org/3/reference/expressions.html#lambda> -->
+
+## Exercises Defining Functions
+1. Palindrome  
+Write a function `is_palindrome()` that checks whether a given string is a palindrome.
+
+*Note: A palindrome is a string that reads the same forwards and backwards, such as 'Anna', 'Otto', 'racecar'. Palindromes do not have to consist only of letters; they can also contain numbers or a combination of letters and numbers, like '345g543'.*
+
+2. Fibonacci Sequence
+
+Develop a function `fibonacci(n)` that generates the first n numbers of the Fibonacci sequence and returns them as a list. The Fibonacci sequence starts with 0 and 1, and each subsequent number is the sum of the two preceding numbers.
+
+3. Encryption
+
+In geocaching, encrypted messages are often used as puzzles. One common encryption logic is:
+
+* A -> Z
+
+* B -> Y
+
+* C -> X
+
+* ...
+
+Write a function `encrypt(string)` that takes a string as input and returns an encrypted string. How can you most easily decrypt an encrypted string?
+
+4. Temperature Converter
+
+Develop a function `convert_temperature(value, from_unit, to_unit)` that converts a temperature from one unit to another. The function should use the following parameters:
+
+  - value: The temperature value to be converted.
+  
+  - from_unit / to_unit: The unit of the input and target value as a string. Possible values are 'C' for Celsius, 'F' for Fahrenheit, and 'K' for Kelvin.
+
+The following conversion formulas between units apply:
+
+  - Celsius to Fahrenheit: F = C * 9/5 + 32
+  
+  - Fahrenheit to Celsius: C = (F - 32) * 5/9
+  
+  - Celsius to Kelvin: K = C + 273.15
+  
+  - Kelvin to Celsius: C = K - 273.15
+  
+  - Fahrenheit to Kelvin: K = (F - 32) * 5/9 + 273.15
+  
+  - Kelvin to Fahrenheit: F = (K - 273.15) * 9/5 + 32
+
+::: {.callout-tip collapse="true"}
+## Sample Solution: Defining Functions Exercises
+
+:::: {.border}
+
+1. Palindrome Exercise
+```{python}
+# 1.
+def is_palindrome(text):
+    text = text.lower()
+    return text == text[::-1]
+
+# string to test
+test_string = "racecar"
+if is_palindrome(test_string):
+    print(f"Yes, {test_string} is a palindrome")
+else:
+    print(f"No, {test_string} is not a palindrome")
+```
+
+2. Exercise Fibonacci
+
+```{python}
+# 2.
+def fibonacci(n):
+
+    # the special cases must be considered:
+    if n <= 0:
+        return []
+    elif n == 1:
+        return [0]
+
+    # after considering the two special cases, the list always starts as follows:
+    fibonacci_sequence = [0, 1]
+    
+    while len(fibonacci_sequence) < n:
+        next_number = fibonacci_sequence[-1] + fibonacci_sequence[-2]
+        fibonacci_sequence.append(next_number)
+    
+    return fibonacci_sequence
+
+fibonacci(8)
+```
+
+3. Exercise Encryption
+
+::::: {.panel-tabset}
+## Using Lists
+```{python}
+# 3.
+def encrypt(text):
+
+    # in six variables, the normal and the reversed alphabet as well as the digits 0-9 are defined
+    abc = "abcdefghijklmnopqrstuvwxyz"
+    abc_2 = "zyxwvutsrqponmlkjihgfedcba"
+    ABC = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    ABC_2 = "ZYXWVUTSRQPONMLKJIHGFEDCBA"
+    digits = "0123456789"
+    digits_2 = "9876543210"
+
+    new_string = ""
+
+    for char in text:
+        if char in ABC: # uppercase letters
+            position = ABC.index(char)
+            new_character = ABC_2[position]
+
+            new_string += new_character
+        elif char in abc: # lowercase letters
+            position = abc.index(char)
+            new_character = abc_2[position]
+
+            new_string += new_character   
+        elif char in digits: # digits
+            position = digits.index(char)
+            new_character = digits_2[position]
+
+            new_string += new_character                    
+        else: # other characters are kept unchanged
+            new_string += char
+    
+    return new_string
+    
+# message to be encrypted:
+secret_message = 'This is the secret: <*)))><'
+encoded_text = encrypt(secret_message)
+print(encoded_text)
+
+# the simplest way to decrypt the encrypted message is to apply the same function again to the encrypted message
+decoded_text = encrypt(encoded_text)
+print(decoded_text)
+```
+
+## Using ord() and chr()
+
+```{python}
+def encrypt(a):
+    a = list(a)
+    # print(a)
+    b = []  # output list
+    
+    for i in a:
+        # print(i, ord(i))
+        b.append(ord(i))
+    # print(b)
+            
+    # invert: a = 97, z = 122, A = 65, Z = 90, 0 = 48, 9 = 57
+    # max - value + min
+    
+    for i in range(len(b)):
+        if b[i] >= 65 and b[i] <= 90:  # uppercase letters
+            b[i] = chr(90 - b[i] + 65)
+        elif b[i] >= 97 and b[i] <= 122:  # lowercase letters
+            b[i] = chr(122 - b[i] + 97)
+        elif b[i] >= 48 and b[i] <= 57:  # digits
+            b[i] = chr(57 - b[i] + 48) 
+        else:  # other characters
+            b[i] = chr(b[i])
+            
+    return ''.join(b)
+
+print(encoded_text)
+print(encrypt(a=encoded_text))
+```
+
+
+:::::
+
+4. Temperature Converter
+```{python}
+# 4.
+def convert_temperature(value, from_unit, to_unit):
+
+    # if statements to check which unit the value to be converted is in.
+    # Depending on which branch is triggered, the value is converted
+    # to the target unit using additional if statements
+    
+    # if statement for original value in Celsius:
+    if from_unit == "C":
+        if to_unit == "F":
+            return value * 9/5 + 32
+        elif to_unit == "K":
+            return value + 273.15
+        elif to_unit == "C":
+            return value
+    
+    # if statement for original value in Fahrenheit:
+    if from_unit == "F":
+        if to_unit == "C":
+            return (value - 32) * 5/9
+        elif to_unit == "K":
+            return (value - 32) * 5/9 + 273.15
+        elif to_unit == "F":
+            return value
+    
+    # if statement for original value in Kelvin:
+    if from_unit == "K":
+        if to_unit == "C":
+            return value - 273.15
+        elif to_unit == "F":
+            return (value - 273.15) * 9/5 + 32
+        elif to_unit == "K":
+            return value
+
+    # return None for invalid units    
+    return None
+
+test_temp = convert_temperature(37, "C", "F")
+print(f"37°C in Fahrenheit is: {test_temp}°F")
+```
+
+Sample solution by Marc Sönnecken and Maik Poetzsch
+
+::::
+:::
+
+&nbsp;
+(@Arnold-2023-funktionen-module-dateien)

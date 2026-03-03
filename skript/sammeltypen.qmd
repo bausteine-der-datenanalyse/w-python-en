@@ -1,0 +1,615 @@
+# Collection Types
+Collection types are used to store and manage multiple values in a single variable. In Python, there are four collection types, each represented by its own class:
+
+  - [Lists](https://en.wikipedia.org/wiki/List_(abstract_data_type)) can contain a flexible number of elements of any type.
+
+  - [Tuples](https://en.wikipedia.org/wiki/Tuple) can also contain elements of any type, but they are immutable.
+
+  - [Sets](https://en.wikipedia.org/wiki/Set_(abstract_data_type)) are unordered collections that can contain each element only once.
+
+  - [Associative Arrays](https://en.wikipedia.org/wiki/Associative_array), or dictionaries, are key-value mappings.
+
+In this chapter, the four collection types are briefly introduced first. Then, we will focus on how to work with lists in particular.
+
+## Lists
+Like all types in Python, lists are created by assignment. When defining a list, elements are enclosed in square brackets `[]` and separated by commas `,`. Lists can be concatenated with the `+` operator. `*` repeats a list n times.
+
+```{python}
+text_variable = 'abc'
+
+list1 = [1, 'xy', True, text_variable]
+print(list1)
+
+# Lists can also contain other lists
+list2 = [None, list1]
+print(list2)
+
+# Lists can be concatenated with + and repeated with *
+print(list1 + list2)
+print(list1 * 2)
+```
+
+
+An empty list can be created by assigning `[]`.
+
+```{python}
+empty_list = []
+print(empty_list)
+```
+
+### Slicing: the Access Operator []
+Accessing individual or multiple elements of a list (and other collection types) is done using the access operator `[]`. A portion of an object is called a slice, which is why the operator is also called the slice operator.
+
+#### Accessing Individual Elements
+Elements are accessed by their index, starting at 0.
+
+```{python}
+print(list1)
+print(list1[0])
+print(list1[3])
+```
+
+Nested lists can be accessed using two consecutive indexing operators. The list `list2` contains, at index position 1, a list with 4 elements.
+
+```{python}
+print(list2)
+print(list2[1])
+print(list2[1][0], list2[1][1], list2[1][2], list2[1][3])
+```
+
+With negative indices, elements can be accessed from the end of a list. For example, -1 refers to the last element.
+
+```{python}
+print(list1)
+print(list1[-1], list1[-3])
+```
+
+#### Accessing Multiple Elements
+Index ranges can be accessed using the `[start:stop:step]` syntax. `start` is the first element to be included, `stop` is *the first element not included*, and `step` defines the increment.
+
+::: {.border}
+
+| Access Operator | Slice |
+|---|---|
+| list[start:stop] | Elements from start to stop - 1 |
+| list[:] | All elements of the list |
+| list[start:] | Elements from start to the end of the list |
+| list[:stop] | Elements from the beginning of the list up to stop - 1 |
+| list[::3] | Every third element |
+
+&nbsp;
+
+Negative values for `start`, `stop`, or `step` select elements in reverse order.
+
+| Access Operator | Slice |
+|---|---|
+| list[-1] | the last element of the list |
+| list[-2:] | the last two elements of the list |
+| list[:-2] | all elements except the last two |
+| list[::-1] | all elements in reverse order |
+| list[1::-1] | the first two elements in reverse order |
+| list[:-3:-1] | the last two elements in reverse order |
+| list[-3::-1] | all elements except the last two in reverse order |
+
+&nbsp;
+
+(Examples by Greg Hewgill, licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.de), available on [stackoverflow](https://stackoverflow.com/a/509295), 2009)
+:::
+
+#### Strings
+Slices can also be applied to strings.
+
+```{python}
+print('Ich bin ein string'[::2])
+print('Hallo Welt'[0:6])
+print('abc'[::-1])
+```
+
+### List Methods
+Various methods are defined for the list type.
+
+#### Determining Elements
+
+- `list.index(x, start, stop)` returns the index position of the first element `x`. The optional arguments `start` and `stop` allow you to limit the search range.
+
+- `list.count(x)` returns the frequency of `x` in the list.
+
+- `list.reverse()` reverses the order of the list elements (this **modifies the list**!). 
+
+- `list.sort(reverse = False)` sorts the list, with the optional argument `reverse = True` for descending order (this **modifies the list**!). The data types within the list must be sortable (i.e., all elements are numeric or strings).
+
+```{python}
+print(list1)
+
+list1.reverse()
+print(list1)
+
+# True is counted as 1
+print("True is counted as 1:", list1.index(1), list1.count(1))
+```
+
+#### Inserting Elements
+
+- `list.append(x)` adds a single element to the end of the list.
+
+- `list.extend(iterable)` adds all elements from the given iterable to the end of the list. The iterable can be a list, a tuple, a set, or a dictionary.
+
+- `list.insert(i, x)` inserts element `x` at position `i`.
+
+```{python}
+print(list1, "\n")
+
+list1.append('Hello')
+list1.extend(['Hello', 'World!'])
+list1.insert(2, '12345')
+
+print(list1)
+```
+
+#### Removing Elements
+
+- `list.remove(x)` removes *the first* occurrence of x in the list and raises a `ValueError` if x is not in the list.
+
+- `list.pop(i)` removes the element at index position i. If no index is specified, the last element is removed. The method `list.pop(i)` returns the removed element.
+
+- `list.clear()` removes all elements from a list.
+
+```{python}
+list1.remove('Hello')
+print(list1)
+
+list1.pop(2)
+```
+
+#### Copying Lists and List Elements
+In Python, lists do not store data directly; instead, they consist of references (pointers) to the memory locations of the elements they contain. When a list is created by assigning it to another list, the elements themselves are **not copied**; instead, both lists refer to the **same memory locations**.
+
+```{python}
+# Copying by assignment
+list1 = [1, 'xy', True, text_variable]
+print("list1:", list1, "\n")
+list2 = list1
+
+## Changing an element in list2
+list2[0] = 'ABC'
+print("list1 also changes because of the assignment to list2:", list1, "\n")
+```
+
+
+To copy a list and create a new object in memory, the method `list.copy()` can be used. Using the slice operator `[:]` also creates a new list in memory.
+
+```{python}
+# Using the list.copy() method
+list1 = [1, 'xy', True, text_variable]
+list2 = list1.copy()
+
+# Modify an element in list2
+list2[0] = 'ABC'
+print("list1 remains unchanged by the assignment to list2:", list1, "\n")
+
+# Using the slice operator
+list1 = [1, 'xy', True, text_variable]
+list2 = list1[:]
+
+# Modify an element in list2
+list2[0] = 'ABC'
+print("list1 remains unchanged by the assignment to list2:", list1)
+```
+
+Copying list items is not a problem in this regard.
+
+```{python}
+# Using the slice operator
+list1 = [1, 'xy', True, text_variable]
+list2 = list1[0:2]
+
+# Changing an element in list2
+list2[0] = 'ABC'
+print("list1 remains unchanged by the assignment in list2:", list1)
+```
+
+To check whether two objects share the same memory space, you can compare their object IDs using the `id()` function or use the `is` / `is not` operators, which internally call `id()`.
+
+```{python}
+list1 = [1, 'xy', True, text_variable]
+list2 = list1
+
+print("ID of list1:", id(list1))
+print("ID of list2:", id(list2))
+print("Is ID of list1 equal to ID of list2:", list1 is list2)
+```
+
+::: {#wrn-value-equality .callout-warning appearance="simple" collapse="true"}
+## Identity vs. Value Equality
+
+The `is` operator checks the identity of two objects and differs from the logical operator `==`, which checks for value equality. Since `list1` and `list2` contain the same elements, both value equality and identity are relevant. The difference between identity and value equality can be illustrated with a single value (the code example suppresses a syntax warning).
+
+```{python}
+#| warning: false
+
+# Value equality
+print(1 == 1.0)
+print(list1 == list2, "\n")
+
+# Identity
+print(1 is 1.0)
+print(list1 is list2)
+```
+
+:::
+
+### List Exercises
+
+1. Determine the position of the value 0 in the list `numbers = [34, 12, 0, 67, 23]`. Remove the value from the list and print the list sorted in ascending order.
+
+2. Now, using the access operator `[]`, print the index positions 1 and 3 of the sorted list `numbers`.
+
+3. Create a list containing the numbers 1 through 10.
+
+  - Use the slice operator to print all even numbers.  
+  - Use the slice operator to print all odd numbers in descending order.
+
+4. Create a list `weekdays` containing the seven days of the week. Use the slice operator to create a new list `weekend` with the weekend days. Remove the weekend days from the `weekdays` list.
+
+5. 4-day week: Use list methods to remove Friday from the `weekdays` list and add it to the `weekend` list before Saturday.
+
+::: {#tip-lists .callout-tip collapse="true"}
+## Example Solution: Lists
+
+:::: {.border}
+1. Exercise
+```{python}
+# 1.
+numbers = [34, 12, 0, 67, 23]
+target_index = numbers.index(0)
+print(target_index)
+
+numbers.remove(0)
+numbers.sort()
+print(numbers)
+```
+
+2. Exercise
+```{python}
+# 2.
+print(f"Value of the number at index position 1: {numbers[1]}")
+print(f"Value of the number at index position 3: {numbers[3]}")
+```
+
+3. Exercise
+```{python}
+# 3.
+lst = list(range(1, 11))
+print(lst[1::2])
+print(lst[-2::-2])
+```
+
+4. Exercise
+```{python}
+# 4.
+# Task: Days of the week
+weekdays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+weekend = weekdays[5:7]  # you could also use weekdays[-2:]
+print("Weekend:", weekend)
+
+weekdays.pop(-1)
+weekdays.pop(-1)
+print(weekdays)
+```
+
+5. Exercise
+```{python}
+# 5.
+weekend.insert(0, weekdays.pop(4))
+print(weekdays)
+print(weekend)
+```
+
+Sample Solution by Marc Sönnecken
+::::
+:::
+
+## Tuples
+Tuples are very similar to lists, but tuples are immutable data objects. This means that the elements of an existing tuple cannot be changed or removed. You also cannot add new elements to a tuple.
+
+Tuples are created using parentheses `()`, and elements are separated by commas `,`. A tuple with a single value is created with a comma in the form `(value, )`. Accessing elements of a tuple is possible using the slice operator `[start:stop:step]`. Tuples can be concatenated using the `+` and `*` operators.
+
+```{python}
+tuple1 = (2, 7.8, 'Fire', True, text_variable)
+tuple2 = (1, )
+
+print(tuple1)
+print(tuple1[2:4])
+print(tuple1[::2])
+print(tuple1[-1])
+print(tuple1[2:4] + tuple2)
+print(3 * tuple2)
+```
+
+### Copying Tuples
+Tuples behave differently from lists when it comes to copying. Tuples do not have a `.copy()` method. Using slicing `[:]` allows you to create a copy, but both tuples initially reference the same memory. When a tuple is reassigned, Python, as with any object, creates a new object in memory.
+
+```{python}
+# Copying by assignment
+tuple1 = (1, 2, 3)
+tuple2 = tuple1
+
+## Reassigning values of tuple1
+tuple1 = (4, 5, 6)
+print(f"The values stored in tuple2 remain unchanged:\n{tuple1} {tuple2}\n")
+
+# Copying using slice operator
+tuple1 = (1, 2, 3)
+tuple2 = tuple1[:]
+print(tuple2 is tuple1)
+
+## Reassigning values of tuple1
+tuple1 = (4, 5, 6)
+print(tuple1, tuple2)
+```
+
+## Sets
+In Python, sets can be created from a list or a tuple using the `set()` function, or directly with curly braces `{}` (an empty set can only be created with `set()`, because `{}` creates an empty dictionary). Sets are unordered collections, so their elements do not have a specific order.
+
+```{python}
+my_list = [1, 1, 5, 3, 3, 4, 2, 'a', 123, 1000, ('tuple', 5)]
+print("The list object as a set:\n", set(my_list))
+
+my_set = {1, 2, 3, 4, 5, 1000, ('tuple', 5), 'a', 123}
+print("A set can also be created using curly braces:", my_set, sep="\n")
+```
+
+Sets can be used, for example, for comparison operations.
+
+```{python}
+set_a = set('Python')
+set_b = set('is awesome')
+
+# unique characters in a
+print("Set a:", set_a)
+
+# characters in a but not in b
+print("Set a - b:", set_a - set_b)
+
+# characters in a or b
+print("Set a | b:", set_a | set_b)
+
+# characters in a and b
+print("Set a & b:", set_a & set_b)
+
+# characters in a or b, but not in both (XOR)
+print("Set a ^ b:", set_a ^ set_b)
+```
+
+
+### Copying Sets
+Sets behave similarly to tuples, with the difference that the `.copy()` method is defined for sets. However, the indexing operator `[]` cannot be used on sets.
+
+```{python}
+# Copying by assignment
+set1 = {1, 2, 3}
+set2 = set1
+print(set1 is set2)
+
+## Reassigning set1
+set1 = {4, 5, 6}
+print(f"The values stored in set2 remain unchanged:\n{set1} {set2}")
+
+# Copying using the .copy() method
+set1 = {1, 2, 3}
+set2 = set1.copy()
+print(set1 is set2)
+
+## Reassigning set1
+set1 = {4, 5, 6}
+print(f"The values stored in set2 remain unchanged:\n{set1} {set2}")
+```
+
+
+## Dictionaries
+Dictionaries consist of key-value pairs. Keys can be numbers or strings, and each key can only appear once. Dictionaries are defined using curly braces `{}`. Keys and their corresponding values are separated by a colon `:`. Values are accessed using the bracket operator `[]`, which contains the key(s). Accessing values by the positional index of keys is not possible, since numbers are interpreted as keys.
+
+```{python}
+dictionary1 = {1: 'abc', 'b': [1, 2, 3], 'c': ('tuple', 5, 6)}
+print(dictionary1, "\n")
+
+print("Values of key 1:", dictionary1[1])
+print("Values of key 'b':", dictionary1['b'])
+```
+
+You can access the keys of a dictionary using the `dictionary.keys()` method, and the values using the `dictionary.values()` method.
+
+```{python}
+print("Keys:", dictionary1.keys(), "\n")
+print("Values:", dictionary1.values())
+```
+
+### Copying Dictionaries
+Dictionaries behave like lists when copied, meaning that copying via assignment will share the same memory space between dictionaries.
+
+```{python}
+# Copying via assignment
+print("dictionary:", dictionary1, "\n")
+dictionary2 = dictionary1
+
+## Modifying an element in dictionary2
+dictionary2[1] = 'ABC'
+print("dictionary1 also changes due to the assignment to dictionary2:\n",
+       dictionary1, "\n")
+
+# Using the dictionary.copy() method
+dictionary1 = {1: 'abc', 'b': [1, 2, 3], 'c': ('tuple', 5, 6)}
+dictionary2 = dictionary1.copy()
+
+## Modifying an element in dictionary2
+dictionary2[1] = 'ABC'
+print("dictionary1 remains unchanged by the assignment to dictionary2:\n",
+       dictionary1, "\n")
+```
+
+
+## Overview of Collection Types
+| Feature                                       | Lists | Tuples | Sets | Dictionary |
+|-----------------------------------------------|-------|--------|------|------------|
+| Description                                   | flexible number of elements of any type | elements of any type, immutable | unordered collection, each element appears only once | mapping table of key-value pairs |
+| Memory shared on assignment                   | yes   | yes (but immutable) | yes (but indexing operator not applicable) | yes |
+| .copy() method defined                        | yes   | no     | yes  | yes |
+| Slice operator applicable                     | yes   | yes    | no   | yes (by key) |
+
+&nbsp;
+
+## Deleting: the `del` Keyword
+To delete collections, elements, or slices, the `del` keyword can be used.
+
+```{python}
+# Deleting a list
+del list1
+
+# Deleting a range of indices from a list
+print("List before deletion:", list2)
+del list2[1:3]
+print("List after deletion:", list2)
+
+# Deleting a key from a dictionary
+print("Dictionary before deletion:", dictionary1)
+del dictionary1[1]
+print("Dictionary after deletion:", dictionary1)
+```
+
+## Functions
+Collection types can be converted into each other.
+
+```{python}
+dictionary = {1: 'Tomcat', 2: 'Vixen', 3: 'Doe'}
+print( (list_var := list(dictionary)) )
+print( (set_var := set(list_var)) )
+print( (tuple_var := tuple(set_var)) )
+```
+
+
+Some practical functions can also be applied to collection types:
+
+* `len()` returns the number of elements in a collection.
+* `min()`, `max()`, `sum()` return the minimum, maximum, or sum of a collection (for dictionaries, the number of keys is counted).
+
+## Operations: Using Loops
+To apply arithmetic and logical operators to the elements stored in a collection, a for-loop is used. In the following example, a list `numbers` is iterated over, the numbers it contains are squared, and each result is appended to the list `squared_numbers`. It also checks whether the squared numbers are divisible by 3 and stores the check results in the list `modulo_3`.
+
+::: {#lst-squared-numbers}
+``` {python}
+numbers = list(range(1, 11))
+
+squared_numbers = [] # the list must be created before the loop
+modulo_3 = [] # create an empty list before the loop
+
+for number in numbers:
+  squared_number = number ** 2
+  squared_numbers.append(squared_number)
+  modulo_3.append(squared_number % 3 == 0)
+
+print(squared_numbers)
+print(modulo_3)
+```
+
+:::
+
+## Collection Types Exercises
+1. Modify the program code in @lst-squared-numbers so that only square numbers divisible by 3 are stored.
+
+2. Speed Conversion  
+Create a script that generates a conversion table for speeds. The following conditions should be observed:
+
+  * The conversion should be from km/h to m/s.
+
+  * The start and end values should be freely selectable in km/h, with both being integers.
+
+  * The number of conversion points should be definable, and the intermediate steps (in km/h) should always be output as whole numbers.
+
+*Tip: In your script, you can use the [input()](https://docs.python.org/3/library/functions.html#input) function to capture values from the user.*
+
+3. Sorting: Given the list `my_list = list(range(9, 0, -1))`. It should be sorted using for-loops (for example, using the Bubble Sort algorithm).
+
+::: {#tip-solution-collection-types .callout-tip collapse="true"}
+## Sample Solution for Collection Types Exercises
+
+1. Square numbers divisible by 3
+``` {python}
+numbers = list(range(1, 11))
+
+square_numbers = [] # the list must be created before the loop
+divisible_by_3 = [] # create an empty list before the loop
+
+for number in numbers:
+    square = number ** 2
+    if square % 3 == 0:
+        square_numbers.append(square)
+
+print(square_numbers)
+```
+
+2. Conversion of Speeds
+
+```{python}
+# Free input
+## start = int(input("Enter starting value in kilometers per hour: "))
+## end = int(input("Enter ending value in kilometers per hour: "))
+## steps = int(input("Enter number of steps to output: "))
+
+# Fixed values for the solution
+start = 5
+end = 107
+steps = 8
+
+# Create list for km/h
+step_size = (end - start) / (steps - 1)
+km_list = []
+for i in range(steps):
+    km_list.append(round(start + i * step_size))
+
+# Conversion
+# meters = 1000 * kilometers
+# seconds = hours * 60 * 60
+m_per_s_list = []
+for value in km_list:
+    m_per_s_list.append(round((value * 1000) / (60 * 60), 2))
+
+# Output
+print(f"Step size: {step_size:.2f}")
+print("Kilometers per hour")
+print(km_list)
+print("Meters per second")
+print(m_per_s_list)
+```
+
+3. Sorting: Bubble Sort Algorithm
+
+```{python}
+# static list, text output
+my_list = list(range(9, 0, -1))
+
+if len(my_list) > 1: 
+
+    print("Initial list\t\t  :", my_list)
+
+    # outer loop
+    step = 0
+    for i in range(len(my_list) - 1):
+
+        # inner loop
+        for j in range(len(my_list) - 1):
+            if my_list[j] > my_list[j + 1]:
+                my_list[j], my_list[j + 1] = my_list[j + 1], my_list[j]
+
+        step += 1
+        print("List after step", step, ":", my_list)
+
+    print("\nSorted list:", *my_list) # * suppresses commas between list elements
+
+else:
+    print("The list must contain at least two elements!")
+```
+
+:::
+
+&nbsp;  
+(@Arnold-2023-schleifen-abzweigungen)
