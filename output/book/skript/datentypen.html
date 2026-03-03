@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.31">
+<meta name="generator" content="quarto-1.8.27">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -89,14 +89,15 @@ div.csl-indent {
 <link href="../skript/einleitung.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-524437e45afd0023c0ef5af34e3ac121.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-c8cd78f0f7a4102d54b040ada74a3c93.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -141,7 +142,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -183,7 +184,8 @@ window.Quarto = {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
       <a href="../index.html" class="sidebar-logo-link">
-      <img src="../skript/00-bilder/logo_with_text_new.svg" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <img src="../skript/00-bilder/logo_with_text_new.svg" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
+      <img src="../skript/00-bilder/logo_with_text_new.svg" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
       </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="../">Werkzeugbaustein Python</a> 
@@ -319,7 +321,7 @@ window.Quarto = {
 <h3 class="anchored" data-anchor-id="integers">Integers</h3>
 <p>Integers are entered in decimal notation by default and can be positive or negative.</p>
 <div id="febceaf7" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">12</span>, <span class="op">-</span><span class="dv">8</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">12</span>, <span class="op">-</span><span class="dv">8</span>)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>12 -8</code></pre>
 </div>
@@ -329,8 +331,8 @@ window.Quarto = {
 <li>Binary system: digits <code>0</code> and <code>1</code> with the prefix <code>0b</code></li>
 </ul>
 <div id="0a154ecc" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bn">0b1000</span>, <span class="st">"plus"</span>, <span class="bn">0b0000</span>, <span class="st">"plus"</span>, <span class="bn">0b0010</span>, <span class="op">\</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>      <span class="st">"plus"</span>, <span class="bn">0b0001</span>, <span class="st">"is"</span>, <span class="bn">0b1011</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bn">0b1000</span>, <span class="st">"plus"</span>, <span class="bn">0b0000</span>, <span class="st">"plus"</span>, <span class="bn">0b0010</span>, <span class="op">\</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>      <span class="st">"plus"</span>, <span class="bn">0b0001</span>, <span class="st">"is"</span>, <span class="bn">0b1011</span>)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>8 plus 0 plus 2 plus 1 is 11</code></pre>
 </div>
@@ -339,8 +341,8 @@ window.Quarto = {
 <li>Octal system: digits <code>0</code> to <code>7</code> with the prefix <code>0o</code></li>
 </ul>
 <div id="cecbd292" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bn">0o7000</span>, <span class="st">"plus"</span>, <span class="bn">0o0700</span>, <span class="st">"plus"</span>, <span class="bn">0o0020</span>, <span class="op">\</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>      <span class="st">"plus"</span>, <span class="bn">0o0000</span>, <span class="st">"is"</span>, <span class="bn">0o7720</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bn">0o7000</span>, <span class="st">"plus"</span>, <span class="bn">0o0700</span>, <span class="st">"plus"</span>, <span class="bn">0o0020</span>, <span class="op">\</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>      <span class="st">"plus"</span>, <span class="bn">0o0000</span>, <span class="st">"is"</span>, <span class="bn">0o7720</span>)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>3584 plus 448 plus 16 plus 0 is 4048</code></pre>
 </div>
@@ -349,8 +351,8 @@ window.Quarto = {
 <li>Hexadecimal system: digits <code>0</code> to <code>F</code> with the prefix <code>0x</code></li>
 </ul>
 <div id="cd8dd609" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bn">0xF000</span>, <span class="st">"plus"</span>, <span class="bn">0x0200</span>, <span class="st">"plus"</span>, <span class="bn">0x00A0</span>, <span class="op">\</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>      <span class="st">"plus"</span>, <span class="bn">0x0001</span>, <span class="st">"is"</span>, <span class="bn">0xF2A1</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bn">0xF000</span>, <span class="st">"plus"</span>, <span class="bn">0x0200</span>, <span class="st">"plus"</span>, <span class="bn">0x00A0</span>, <span class="op">\</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>      <span class="st">"plus"</span>, <span class="bn">0x0001</span>, <span class="st">"is"</span>, <span class="bn">0xF2A1</span>)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>61440 plus 512 plus 160 plus 1 is 62113</code></pre>
 </div>
@@ -360,10 +362,10 @@ window.Quarto = {
 <h3 class="anchored" data-anchor-id="floating-point-numbers">Floating-Point Numbers</h3>
 <p>Floating-point numbers are written either with the decimal point <code>.</code> or in exponential notation. Floating-point numbers have the type <code>float</code>.</p>
 <div id="309f99ae" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="fl">120.6</span>, <span class="fl">1206e-1</span>, <span class="fl">12060e-2</span>, <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="fl">120.6</span>, <span class="fl">1206e-1</span>, <span class="fl">12060e-2</span>, <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"When representing lottery winnings in exponential notation, the sign matters."</span>)</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="fl">1e-3</span>, <span class="st">"or"</span>, <span class="fl">1e+3</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="fl">1e-3</span>, <span class="st">"or"</span>, <span class="fl">1e+3</span>)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>120.6 120.6 120.6 
 
@@ -375,9 +377,9 @@ When representing lottery winnings in exponential notation, the sign matters.
 <p><span class="math display">\[ \frac{1_2}{1010_2} ~ {=} ~ 0,000\overline{1100}_2 \]</span></p>
 <p>Therefore, decimal numbers must be approximated as a fraction of two integers (the binary fraction that approximates 0.1 is, in decimal notation, 3602879701896397 / 2<sup>55</sup>). As a result, multiple floating-point numbers can be represented by the same binary approximation. Python outputs the shortest decimal representation, but since calculations are performed in binary, the nearest binary approximation—and therefore the corresponding shortest decimal—can change during computations (more information in the <a href="https://docs.python.org/3/tutorial/floatingpoint.html">Python documentation</a>).</p>
 <div id="7a468789" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="fl">0.1</span>)  <span class="co"># The shortest decimal representation of the binary approximation</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="fl">0.1</span>)  <span class="co"># The shortest decimal representation of the binary approximation</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">format</span>(<span class="fl">0.1</span>, <span class="st">'.17g'</span>))  <span class="co"># The next longer decimal representation of the same binary approximation</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="fl">0.3</span> <span class="op">-</span> <span class="fl">0.2</span>)  <span class="co"># Computed in binary, the binary approximation may change</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="fl">0.3</span> <span class="op">-</span> <span class="fl">0.2</span>)  <span class="co"># Computed in binary, the binary approximation may change</span></span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>0.1
 0.10000000000000001
@@ -386,11 +388,11 @@ When representing lottery winnings in exponential notation, the sign matters.
 </div>
 <p>In practical work with Python, you may occasionally encounter results that seem unusual at first glance.</p>
 <div id="af19780d" class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="fl">0.1</span> <span class="op">+</span> <span class="fl">0.2</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="fl">0.1</span> <span class="op">+</span> <span class="fl">0.2</span>)</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="fl">0.01</span> <span class="op">+</span> <span class="fl">0.02</span>)</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="fl">0.001</span> <span class="op">+</span> <span class="fl">0.002</span>)</span>
 <span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="fl">0.0001</span> <span class="op">+</span> <span class="fl">0.0002</span>)</span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="fl">0.00001</span> <span class="op">+</span> <span class="fl">0.00002</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="fl">0.00001</span> <span class="op">+</span> <span class="fl">0.00002</span>)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>0.30000000000000004
 0.03
@@ -469,7 +471,7 @@ When representing lottery winnings in exponential notation, the sign matters.
 </ol></li>
 </ol>
 <div id="tip-solution-numbers" class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -482,7 +484,7 @@ Tipp&nbsp;2.1: Sample Solution Numbers
 <div class="callout-body-container callout-body">
 <div class="border">
 <div id="418561b4" class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1.</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1.</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'4 + 2 * 4 ='</span>, <span class="dv">4</span><span class="op">+</span><span class="dv">2</span><span class="op">*</span><span class="dv">4</span>, <span class="st">'</span><span class="ch">\n</span><span class="st">'</span>)</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 2.</span></span>
 <span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'2 to the power of 12 ='</span>, <span class="dv">2</span><span class="op">**</span><span class="dv">12</span>, <span class="st">'</span><span class="ch">\n</span><span class="st">'</span>)</span>
@@ -498,7 +500,7 @@ Tipp&nbsp;2.1: Sample Solution Numbers
 <span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>option_a <span class="op">=</span> <span class="dv">1000</span><span class="op">*</span><span class="fl">1.03</span><span class="op">**</span><span class="dv">20</span></span>
 <span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'after 20 years at 3% = </span><span class="sc">{</span>option_a<span class="sc">:.2f}</span><span class="ss">'</span>)</span>
 <span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a>option_b <span class="op">=</span> <span class="dv">1000</span><span class="op">*</span><span class="fl">1.02</span><span class="op">**</span><span class="dv">30</span></span>
-<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'after 30 years at 2% = </span><span class="sc">{</span>option_b<span class="sc">:.2f}</span><span class="ss">'</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'after 30 years at 2% = </span><span class="sc">{</span>option_b<span class="sc">:.2f}</span><span class="ss">'</span>)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>4 + 2 * 4 = 12 
 
@@ -526,12 +528,12 @@ after 30 years at 2% = 1811.36</code></pre>
 <h2 data-number="2.4" class="anchored" data-anchor-id="boolean-values"><span class="header-section-number">2.4</span> Boolean Values</h2>
 <p>The boolean values <code>True</code> and <code>False</code> are the result of logical expressions, which we will explore in more detail later. They also take the values <code>1</code> and <code>0</code> and therefore belong to the number type in Python.</p>
 <div id="6f41193d" class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Is 10 greater than 9?"</span>, <span class="dv">10</span> <span class="op">&gt;</span> <span class="dv">9</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Is 10 greater than 9?"</span>, <span class="dv">10</span> <span class="op">&gt;</span> <span class="dv">9</span>)</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Is 11 less than 10?"</span>, <span class="dv">11</span> <span class="op">&lt;</span> <span class="dv">10</span>)</span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Is 10 exactly 10.0?"</span>, <span class="dv">10</span> <span class="op">==</span> <span class="fl">10.0</span>, <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span>
 <span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"True and False can be added using +:"</span>, <span class="va">True</span> <span class="op">+</span> <span class="va">False</span>)</span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"... and multiplied using *:"</span>, <span class="va">True</span> <span class="op">*</span> <span class="va">False</span>, <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"... and multiplied using *:"</span>, <span class="va">True</span> <span class="op">*</span> <span class="va">False</span>, <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Is 10 greater than 9? True
 Is 11 less than 10? False
@@ -544,22 +546,22 @@ True and False can be added using +: 1
 </div>
 <p>Multiplying Boolean values is useful for combining multiple logical conditions into a logical AND:</p>
 <div id="eac1da7e" class="cell" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Is 10 &gt; 9 AND 10 &gt; 8?"</span>, (<span class="dv">10</span> <span class="op">&gt;</span> <span class="dv">9</span>) <span class="op">*</span> (<span class="dv">10</span> <span class="op">&gt;</span> <span class="dv">8</span>))</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Is 10 &gt; 9 AND 10 &gt; 8?"</span>, (<span class="dv">10</span> <span class="op">&gt;</span> <span class="dv">9</span>) <span class="op">*</span> (<span class="dv">10</span> <span class="op">&gt;</span> <span class="dv">8</span>))</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Is 10 &gt; 9 AND 10 &gt; 8? 1</code></pre>
 </div>
 </div>
 <p>The <code>bool()</code> function returns the truth value of a value.</p>
 <div id="36a4165c" class="cell" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Is 10 &gt; 9 AND &gt; 8?"</span>, <span class="bu">bool</span>((<span class="dv">10</span> <span class="op">&gt;</span> <span class="dv">9</span>) <span class="op">*</span> (<span class="dv">10</span> <span class="op">&gt;</span> <span class="dv">8</span>)))</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Is 10 &gt; 9 AND &gt; 8?"</span>, <span class="bu">bool</span>((<span class="dv">10</span> <span class="op">&gt;</span> <span class="dv">9</span>) <span class="op">*</span> (<span class="dv">10</span> <span class="op">&gt;</span> <span class="dv">8</span>)))</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Is 10 &gt; 9 AND &gt; 8? True</code></pre>
 </div>
 </div>
 <p>Most values in Python have the truth value <code>True</code>.</p>
 <div id="09845371" class="cell" data-execution_count="12">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">bool</span>(<span class="dv">1</span>), <span class="bu">bool</span>(<span class="dv">2</span>), <span class="bu">bool</span>(<span class="fl">2.4</span>))</span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">bool</span>(<span class="st">'a'</span>), <span class="bu">bool</span>(<span class="st">'b'</span>), <span class="bu">bool</span>(<span class="st">'ab'</span>))</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">bool</span>(<span class="dv">1</span>), <span class="bu">bool</span>(<span class="dv">2</span>), <span class="bu">bool</span>(<span class="fl">2.4</span>))</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">bool</span>(<span class="st">'a'</span>), <span class="bu">bool</span>(<span class="st">'b'</span>), <span class="bu">bool</span>(<span class="st">'ab'</span>))</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>True True True
 True True True</code></pre>
@@ -567,12 +569,12 @@ True True True</code></pre>
 </div>
 <p>Besides <code>False</code> and <code>0</code>, empty or non-existent values or objects evaluate to <code>False</code>.</p>
 <div id="6f6cfc34" class="cell" data-execution_count="13">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">bool</span>(<span class="va">False</span>), <span class="bu">bool</span>(<span class="dv">0</span>))</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">bool</span>(<span class="va">False</span>), <span class="bu">bool</span>(<span class="dv">0</span>))</span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">bool</span>(<span class="st">""</span>)) <span class="co"># an empty string</span></span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">bool</span>([])) <span class="co"># an empty list</span></span>
 <span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">bool</span>(())) <span class="co"># an empty tuple</span></span>
 <span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">bool</span>({})) <span class="co"># an empty dictionary</span></span>
-<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">bool</span>(<span class="va">None</span>)) <span class="co"># None represents a non-existent value</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">bool</span>(<span class="va">None</span>)) <span class="co"># None represents a non-existent value</span></span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>False False
 False
@@ -584,13 +586,13 @@ False</code></pre>
 </div>
 <p>The collection types list, tuple, and dictionary will be introduced in the following chapters. Boolean values can control the execution of program code by acting like <code>on</code> and <code>off</code>. This way, code with an <code>if</code> statement is only executed if a collection type actually contains values.</p>
 <div id="2f9a10ff" class="cell" data-execution_count="14">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>my_list <span class="op">=</span> [<span class="st">'Apples'</span>, <span class="st">'Butter'</span>]</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>my_list <span class="op">=</span> [<span class="st">'Apples'</span>, <span class="st">'Butter'</span>]</span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> my_list:</span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"We need to buy </span><span class="sc">{</span>my_list<span class="sc">}</span><span class="ss">."</span>)</span>
 <span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>my_list <span class="op">=</span> []  <span class="co"># an empty list</span></span>
 <span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> my_list:</span>
-<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"We need to buy </span><span class="sc">{</span>my_list<span class="sc">}</span><span class="ss">."</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"We need to buy </span><span class="sc">{</span>my_list<span class="sc">}</span><span class="ss">."</span>)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>We need to buy ['Apples', 'Butter'].</code></pre>
 </div>
@@ -655,11 +657,11 @@ Hinweis&nbsp;2.1: Bitwise Operators
 <div class="callout-body-container callout-body">
 <p>Special caution is required with <a href="https://wiki.python.org/moin/BitwiseOperators">bitwise operators</a>. These do not compare numbers as a whole, but rather bit by bit (in the binary system). Note that bitwise operators have higher precedence than comparison operations.</p>
 <div id="d7624a4d" class="cell" data-execution_count="15">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">10</span> <span class="op">&gt;</span> <span class="dv">5</span> <span class="kw">and</span> <span class="dv">10</span> <span class="op">&gt;</span> <span class="dv">6</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">10</span> <span class="op">&gt;</span> <span class="dv">5</span> <span class="kw">and</span> <span class="dv">10</span> <span class="op">&gt;</span> <span class="dv">6</span>)</span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">10</span> <span class="op">&gt;</span> <span class="dv">5</span> <span class="op">&amp;</span> <span class="dv">10</span> <span class="op">&gt;</span> <span class="dv">6</span>)</span>
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">5</span> <span class="op">&amp;</span> <span class="dv">10</span>)</span>
 <span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">10</span> <span class="op">&gt;</span> <span class="va">False</span> <span class="op">&gt;</span> <span class="dv">6</span>)</span>
-<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>((<span class="dv">10</span> <span class="op">&gt;</span> <span class="dv">5</span>) <span class="op">&amp;</span> (<span class="dv">10</span> <span class="op">&gt;</span> <span class="dv">6</span>))</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>((<span class="dv">10</span> <span class="op">&gt;</span> <span class="dv">5</span>) <span class="op">&amp;</span> (<span class="dv">10</span> <span class="op">&gt;</span> <span class="dv">6</span>))</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>True
 False
@@ -701,7 +703,7 @@ Tipp
 Adults pay full price. Children under 14 travel for free. Teenagers from 14 up to 18 years old and seniors from 65 years onwards get a discount.</li>
 </ol>
 <div id="tip-solution-boolean" class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -714,7 +716,7 @@ Tipp&nbsp;2.2: Sample Solution for Boolean Values
 <div class="callout-body-container callout-body">
 <div class="border">
 <div id="50265e9e" class="cell" data-execution_count="16">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1.</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1.</span></span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Is 44/4.5 greater than 10?'</span>, <span class="dv">44</span><span class="op">/</span><span class="fl">4.5</span> <span class="op">&gt;</span> <span class="dv">10</span>)</span>
 <span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 2.</span></span>
 <span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Is 4.5 greater than 4 but less than 5?'</span>, <span class="dv">4</span> <span class="op">&lt;</span> <span class="fl">4.5</span> <span class="kw">and</span> <span class="fl">4.5</span> <span class="op">&lt;</span> <span class="dv">5</span>)</span>
@@ -733,7 +735,7 @@ Tipp&nbsp;2.2: Sample Solution for Boolean Values
 <span id="cb31-17"><a href="#cb31-17" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb31-18"><a href="#cb31-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'The person has to pay full price:'</span>, age <span class="op">&gt;=</span> <span class="dv">18</span> <span class="kw">and</span> age <span class="op">&lt;</span> <span class="dv">65</span>)</span>
 <span id="cb31-19"><a href="#cb31-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'The person gets a discount:'</span>, age <span class="op">&gt;=</span> <span class="dv">14</span> <span class="kw">and</span> age <span class="op">&lt;</span> <span class="dv">18</span> <span class="kw">or</span> age <span class="op">&gt;=</span> <span class="dv">65</span>)</span>
-<span id="cb31-20"><a href="#cb31-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'The person travels for free:'</span>, age <span class="op">&lt;</span> <span class="dv">14</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb31-20"><a href="#cb31-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'The person travels for free:'</span>, age <span class="op">&lt;</span> <span class="dv">14</span>)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Is 44/4.5 greater than 10? False
 Is 4.5 greater than 4 but less than 5? True
@@ -758,8 +760,8 @@ The person travels for free: False</code></pre>
 <h2 data-number="2.7" class="anchored" data-anchor-id="strings"><span class="header-section-number">2.7</span> Strings</h2>
 <p>Strings are enclosed in single or double quotes in Python.</p>
 <div id="fd5ff6a7" class="cell" data-execution_count="17">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'a string'</span>)</span>
-<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"another string"</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'a string'</span>)</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"another string"</span>)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>a string
 another string</code></pre>
@@ -767,8 +769,8 @@ another string</code></pre>
 </div>
 <p>Within a string, single or double quotes can be used, as long as they don’t match the quotes surrounding the string.</p>
 <div id="cdc7a317" class="cell" data-execution_count="18">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'A sophisticated heap beam, which we call a "LASER".'</span>)</span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"I've turned the moon into what I like to call a 'Death Star'."</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'A sophisticated heap beam, which we call a "LASER".'</span>)</span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"I've turned the moon into what I like to call a 'Death Star'."</span>)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>A sophisticated heap beam, which we call a "LASER".
 I've turned the moon into what I like to call a 'Death Star'.</code></pre>
@@ -776,8 +778,8 @@ I've turned the moon into what I like to call a 'Death Star'.</code></pre>
 </div>
 <p>The control character <code>\</code> (also called the escape character) allows you to use certain special characters.</p>
 <div id="68dfc097" class="cell" data-execution_count="19">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"The control character </span><span class="ch">\\</span><span class="st"> allows the same </span><span class="ch">\"</span><span class="st">quotation marks</span><span class="ch">\"</span><span class="st"> in the output of print."</span>)</span>
-<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"First a</span><span class="ch">\t</span><span class="st">Tab, then a</span><span class="ch">\n</span><span class="st">new line."</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"The control character </span><span class="ch">\\</span><span class="st"> allows the same </span><span class="ch">\"</span><span class="st">quotation marks</span><span class="ch">\"</span><span class="st"> in the output of print."</span>)</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"First a</span><span class="ch">\t</span><span class="st">Tab, then a</span><span class="ch">\n</span><span class="st">new line."</span>)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>The control character \ allows the same "quotation marks" in the output of print.
 First a Tab, then a
@@ -786,8 +788,8 @@ new line.</code></pre>
 </div>
 <p>A prefixed <code>r</code> makes the backslash <code>\</code> treated literally (raw string literal). This is useful, for example, when working with file paths.</p>
 <div id="7abca001" class="cell" data-execution_count="20">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"The data is located at: C:</span><span class="ch">\t</span><span class="st">olle_daten</span><span class="ch">\n</span><span class="st">ordpol</span><span class="er">\</span><span class="st">weihnachtsmann"</span>)</span>
-<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="vs">r"The data is located at: C:</span><span class="ch">\t</span><span class="vs">olle_daten</span><span class="ch">\n</span><span class="vs">ordpol</span><span class="dv">\w</span><span class="vs">eihnachtsmann"</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"The data is located at: C:</span><span class="ch">\t</span><span class="st">olle_daten</span><span class="ch">\n</span><span class="st">ordpol</span><span class="er">\</span><span class="st">weihnachtsmann"</span>)</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="vs">r"The data is located at: C:</span><span class="ch">\t</span><span class="vs">olle_daten</span><span class="ch">\n</span><span class="vs">ordpol</span><span class="dv">\w</span><span class="vs">eihnachtsmann"</span>)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>The data is located at: C:  olle_daten
 ordpol\weihnachtsmann
@@ -799,7 +801,7 @@ The data is located at: C:\tolle_daten\nordpol\weihnachtsmann</code></pre>
 <h2 data-number="2.8" class="anchored" data-anchor-id="string-operations"><span class="header-section-number">2.8</span> String Operations</h2>
 <p>Some operators also work with data of type string.</p>
 <div id="512bde9d" class="cell" data-execution_count="21">
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># string + string</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># string + string</span></span>
 <span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'a'</span> <span class="op">+</span> <span class="st">'b'</span>)</span>
 <span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a><span class="co"># string * number</span></span>
@@ -807,7 +809,7 @@ The data is located at: C:\tolle_daten\nordpol\weihnachtsmann</code></pre>
 <span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a><span class="co"># logical operators</span></span>
 <span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'a'</span> <span class="op">&lt;</span> <span class="st">'b'</span>, <span class="st">'a'</span> <span class="op">&gt;=</span> <span class="st">'b'</span>, <span class="st">'a'</span> <span class="op">!=</span> <span class="st">'b'</span>)</span>
-<span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'a'</span> <span class="kw">or</span> <span class="st">'b'</span>, <span class="st">'a'</span> <span class="kw">and</span> <span class="st">'b'</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'a'</span> <span class="kw">or</span> <span class="st">'b'</span>, <span class="st">'a'</span> <span class="kw">and</span> <span class="st">'b'</span>)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>ab
 aaaaaaaaaaaaaaa
@@ -826,7 +828,7 @@ a b</code></pre>
 <li>Print the file path: <code>"~\home\tobi\new_data"</code></li>
 </ol>
 <div id="tip-solution-strings" class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -839,14 +841,14 @@ Tipp&nbsp;2.3: Example Solution for String Exercises
 <div class="callout-body-container callout-body">
 <div class="border">
 <div id="75c9825b" class="cell" data-execution_count="22">
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1.</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1.</span></span>
 <span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Python"</span> <span class="op">+</span> <span class="st">" for beginners"</span>)  <span class="co"># The two strings are concatenated directly, without any space in between</span></span>
 <span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 2.</span></span>
 <span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">10</span> <span class="op">*</span> <span class="st">"tick tack"</span>)</span>
 <span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a><span class="co"># 3.</span></span>
 <span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Aachen"</span> <span class="op">&lt;</span> <span class="st">"Bern"</span>)  <span class="co"># Unicode values of the characters are compared</span></span>
 <span id="cb43-7"><a href="#cb43-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 4.</span></span>
-<span id="cb43-8"><a href="#cb43-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="vs">r"~</span><span class="er">\</span><span class="vs">home</span><span class="ch">\t</span><span class="vs">obi</span><span class="ch">\n</span><span class="vs">ew_data"</span>)  <span class="co"># Python interprets the backslash "\" as an escape character. To prevent this in file paths, the path is printed as a raw string using r"</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb43-8"><a href="#cb43-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="vs">r"~</span><span class="er">\</span><span class="vs">home</span><span class="ch">\t</span><span class="vs">obi</span><span class="ch">\n</span><span class="vs">ew_data"</span>)  <span class="co"># Python interprets the backslash "\" as an escape character. To prevent this in file paths, the path is printed as a raw string using r"</span></span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Python for beginners
 tick tacktick tacktick tacktick tacktick tacktick tacktick tacktick tacktick tacktick tack
@@ -864,20 +866,20 @@ True
 <h2 data-number="2.10" class="anchored" data-anchor-id="variables"><span class="header-section-number">2.10</span> Variables</h2>
 <p>Variables are placeholders or references to data. Assignment is done using the assignment operator <code>=</code>. A variable name may only consist of letters, numbers, and underscores. The first character cannot be a number.</p>
 <div id="a9e6ba54" class="cell" data-execution_count="23">
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>var_1 <span class="op">=</span> <span class="st">'ABC'</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>var_1 <span class="op">=</span> <span class="st">'ABC'</span></span>
 <span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>var_2 <span class="op">=</span> <span class="dv">26</span></span>
 <span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>var_3 <span class="op">=</span> <span class="va">True</span></span>
 <span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"The"</span>, var_1, <span class="st">"has"</span>, var_2, <span class="st">"letters. This is"</span>, var_3)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"The"</span>, var_1, <span class="st">"has"</span>, var_2, <span class="st">"letters. This is"</span>, var_3)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>The ABC has 26 letters. This is True</code></pre>
 </div>
 </div>
 <p>In Python, variables do not need to be initialized. The data type of a variable is determined by assigning an appropriate value.</p>
 <div id="979fc783" class="cell" data-execution_count="24">
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"The variable var_1 has the type"</span>, <span class="bu">type</span>(var_1))</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"The variable var_1 has the type"</span>, <span class="bu">type</span>(var_1))</span>
 <span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"The variable var_2 has the type"</span>, <span class="bu">type</span>(var_2))</span>
-<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"The variable var_3 has the type"</span>, <span class="bu">type</span>(var_3))</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"The variable var_3 has the type"</span>, <span class="bu">type</span>(var_3))</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>The variable var_1 has the type &lt;class 'str'&gt;
 The variable var_2 has the type &lt;class 'int'&gt;
@@ -886,23 +888,23 @@ The variable var_3 has the type &lt;class 'bool'&gt;</code></pre>
 </div>
 <p>The data type of a variable changes when it is assigned a new value of a different data type.</p>
 <div id="d94861cc" class="cell" data-execution_count="25">
-<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>var_1 <span class="op">=</span> <span class="dv">100</span></span>
-<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"The variable var_1 has the type"</span>, <span class="bu">type</span>(var_1))</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>var_1 <span class="op">=</span> <span class="dv">100</span></span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"The variable var_1 has the type"</span>, <span class="bu">type</span>(var_1))</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>The variable var_1 has the type &lt;class 'int'&gt;</code></pre>
 </div>
 </div>
 <p>Similarly, the data type of a variable can change to accommodate the result of an operation. In this example, the result cannot be stored as an integer. Python therefore assigns the data type ‘float’ to the object <code>var_1</code>.</p>
 <div id="c901bea2" class="cell" data-execution_count="26">
-<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>var_1 <span class="op">=</span> var_1 <span class="op">/</span> <span class="dv">11</span></span>
-<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"The variable var_1 has the type"</span>, <span class="bu">type</span>(var_1))</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>var_1 <span class="op">=</span> var_1 <span class="op">/</span> <span class="dv">11</span></span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"The variable var_1 has the type"</span>, <span class="bu">type</span>(var_1))</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>The variable var_1 has the type &lt;class 'float'&gt;</code></pre>
 </div>
 </div>
 <p>Python provides functions to determine the data type of a variable and to convert it. The function <code>type()</code> has already been used in the code examples to check the data type (i.e., class) of objects. The following code block demonstrates type conversion.</p>
 <div id="73f02529" class="cell" data-execution_count="27">
-<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">67</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">67</span></span>
 <span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a, <span class="bu">type</span>(a))</span>
 <span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> a <span class="op">+</span> <span class="fl">1.8</span></span>
@@ -918,7 +920,7 @@ The variable var_3 has the type &lt;class 'bool'&gt;</code></pre>
 <span id="cb53-14"><a href="#cb53-14" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb53-15"><a href="#cb53-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Converting to strings with str(): </span><span class="sc">{</span>(a <span class="op">:=</span> <span class="bu">str</span>(a))<span class="sc">,</span> (b <span class="op">:=</span> <span class="bu">str</span>(b))<span class="sc">}</span><span class="ch">\n</span><span class="ss">"</span>)</span>
 <span id="cb53-16"><a href="#cb53-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb53-17"><a href="#cb53-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Converting to Boolean values with bool(): </span><span class="sc">{</span><span class="bu">bool</span>(a)<span class="sc">,</span> <span class="bu">bool</span>(b)<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb53-17"><a href="#cb53-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Converting to Boolean values with bool(): </span><span class="sc">{</span><span class="bu">bool</span>(a)<span class="sc">,</span> <span class="bu">bool</span>(b)<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>67 &lt;class 'int'&gt;
 68.8 &lt;class 'float'&gt; 
@@ -1001,7 +1003,7 @@ Tipp&nbsp;2.4: Readable Assignments
 <p>There are usually only a few rules for naming variables. Still, it is better to choose a long but descriptive variable name than a short one that is easy to type. Code is read far more often than it is written. Can you remember? What value is stored in the variable <code>Var_3</code>, and what values are stored in <code>variable1</code> and <code>a</code>? It’s enough if you can recall the correct data type.</p>
 <p>If you can’t remember, this is an example of poor naming: these variable names are not descriptive. The solution is in the expandable section below.</p>
 <div id="tip-variable-solution" class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1013,9 +1015,9 @@ Tipp&nbsp;2.5: Variable Solution
 <div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div id="daf263d4" class="cell" data-execution_count="29">
-<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(var_3, <span class="bu">type</span>(var_3))</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb55"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(var_3, <span class="bu">type</span>(var_3))</span>
 <span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(variable1, <span class="bu">type</span>(variable1))</span>
-<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a, <span class="bu">type</span>(a))</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a, <span class="bu">type</span>(a))</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>True &lt;class 'bool'&gt;
 15 &lt;class 'int'&gt;
@@ -1072,7 +1074,7 @@ x_0 = 10 \, km \,\,\,v_0 = 50 \frac{km}{h} \,\,\,a = 0.1 \frac{m}{s^2}
 Use the above equation and your variables to calculate the position <span class="math inline">\(x(t)\)</span>.<br>
 Output not only the value of <span class="math inline">\(x(t)\)</span> in kilometers, but embed it in a full sentence including units.</p>
 <div id="tip-solutionvariables" class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1088,7 +1090,7 @@ Tipp&nbsp;2.6: Sample Solution for Variable Exercises
 <li>Exercise</li>
 </ol>
 <div id="12a28ff2" class="cell" data-execution_count="30">
-<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1.</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb58"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1.</span></span>
 <span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> time_breakdown(t):</span>
 <span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a>    days <span class="op">=</span> t <span class="op">//</span> (<span class="dv">24</span><span class="op">*</span><span class="dv">3600</span>)</span>
 <span id="cb58-4"><a href="#cb58-4" aria-hidden="true" tabindex="-1"></a>    t <span class="op">=</span> t <span class="op">%</span> (<span class="dv">24</span><span class="op">*</span><span class="dv">3600</span>)</span>
@@ -1104,7 +1106,7 @@ Tipp&nbsp;2.6: Sample Solution for Variable Exercises
 <span id="cb58-14"><a href="#cb58-14" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb58-15"><a href="#cb58-15" aria-hidden="true" tabindex="-1"></a>days, hours, minutes, seconds <span class="op">=</span> time_breakdown(given_time)</span>
 <span id="cb58-16"><a href="#cb58-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-17"><a href="#cb58-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>given_time<span class="sc">}</span><span class="ss"> seconds correspond to </span><span class="sc">{</span>days<span class="sc">}</span><span class="ss"> days, </span><span class="sc">{</span>hours<span class="sc">}</span><span class="ss"> hours, </span><span class="sc">{</span>minutes<span class="sc">}</span><span class="ss"> minutes, and </span><span class="sc">{</span>seconds<span class="sc">}</span><span class="ss"> seconds"</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb58-17"><a href="#cb58-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>given_time<span class="sc">}</span><span class="ss"> seconds correspond to </span><span class="sc">{</span>days<span class="sc">}</span><span class="ss"> days, </span><span class="sc">{</span>hours<span class="sc">}</span><span class="ss"> hours, </span><span class="sc">{</span>minutes<span class="sc">}</span><span class="ss"> minutes, and </span><span class="sc">{</span>seconds<span class="sc">}</span><span class="ss"> seconds"</span>)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>79222 seconds correspond to 0 days, 22 hours, 0 minutes, and 22 seconds</code></pre>
 </div>
@@ -1113,7 +1115,7 @@ Tipp&nbsp;2.6: Sample Solution for Variable Exercises
 <li>Exercise</li>
 </ol>
 <div id="2a26e181" class="cell" data-execution_count="31">
-<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 2.</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb60"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 2.</span></span>
 <span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Initial values including conversions</span></span>
 <span id="cb60-3"><a href="#cb60-3" aria-hidden="true" tabindex="-1"></a>x0 <span class="op">=</span> <span class="dv">10</span><span class="op">*</span><span class="dv">1000</span> <span class="co"># kilometers to meters</span></span>
 <span id="cb60-4"><a href="#cb60-4" aria-hidden="true" tabindex="-1"></a>v0 <span class="op">=</span> <span class="dv">50</span><span class="op">/</span><span class="fl">3.6</span> <span class="co"># km/h to m/s</span></span>
@@ -1122,7 +1124,7 @@ Tipp&nbsp;2.6: Sample Solution for Variable Exercises
 <span id="cb60-7"><a href="#cb60-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb60-8"><a href="#cb60-8" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> x0 <span class="op">+</span> v0 <span class="op">*</span> t <span class="op">+</span> <span class="fl">0.5</span> <span class="op">*</span> a <span class="op">*</span> t <span class="op">**</span><span class="dv">2</span></span>
 <span id="cb60-9"><a href="#cb60-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb60-10"><a href="#cb60-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"The calculated position of the vehicle at time t = </span><span class="sc">{</span>(t<span class="op">/</span><span class="dv">60</span>)<span class="sc">:.0f}</span><span class="ss"> minutes is </span><span class="sc">{</span>(x<span class="op">/</span><span class="dv">1000</span>)<span class="sc">:.2f}</span><span class="ss"> kilometers."</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb60-10"><a href="#cb60-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"The calculated position of the vehicle at time t = </span><span class="sc">{</span>(t<span class="op">/</span><span class="dv">60</span>)<span class="sc">:.0f}</span><span class="ss"> minutes is </span><span class="sc">{</span>(x<span class="op">/</span><span class="dv">1000</span>)<span class="sc">:.2f}</span><span class="ss"> kilometers."</span>)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>The calculated position of the vehicle at time t = 10 minutes is 36.33 kilometers.</code></pre>
 </div>
@@ -1197,13 +1199,14 @@ Arnold, Simone. 2023a. <span>„Datenanalyse mit Python. Datentypen und Grundlag
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.31">
+<meta name="generator" content="quarto-1.8.27">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -89,14 +89,15 @@ div.csl-indent {
 <link href="../skript/funktionen-definieren.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-524437e45afd0023c0ef5af34e3ac121.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-c8cd78f0f7a4102d54b040ada74a3c93.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -154,7 +155,8 @@ div.csl-indent {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
       <a href="../index.html" class="sidebar-logo-link">
-      <img src="../skript/00-bilder/logo_with_text_new.svg" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <img src="../skript/00-bilder/logo_with_text_new.svg" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
+      <img src="../skript/00-bilder/logo_with_text_new.svg" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
       </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="../">Werkzeugbaustein Python</a> 
@@ -302,11 +304,11 @@ div.csl-indent {
 <h3 class="anchored" data-anchor-id="file-path">File path</h3>
 <p>The local file path is specified relative to the current working directory.</p>
 <div id="739a8674" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>path_maya <span class="op">=</span> <span class="st">"01-daten/dice-maya.txt"</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>path_hans <span class="op">=</span> <span class="st">"01-daten/dice-hans.txt"</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>path_maya <span class="op">=</span> <span class="st">"01-daten/dice-maya.txt"</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>path_hans <span class="op">=</span> <span class="st">"01-daten/dice-hans.txt"</span></span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="tip-wd-Python" class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -319,8 +321,8 @@ Tipp&nbsp;7.1: Determine and change the working directory in Python
 <div class="callout-body-container callout-body">
 <p>The path of the current working directory can be obtained using the <code>os</code> module via <code>os.getcwd()</code> (here without output). The working directory can be changed if necessary using <code>os.chdir('new_path')</code>. You can recognize the correct formatting of the path from the output of <code>os.getcwd()</code>.</p>
 <div id="a43fa58c" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(os.getcwd())</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(os.getcwd())</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>The importing of modules is covered in a later chapter.</p>
 </div>
@@ -368,22 +370,22 @@ Tipp&nbsp;7.1: Determine and change the working directory in Python
 <p>The access modes can also be combined. Further information can be found in the <a href="https://docs.python.org/3/library/functions.html#open">documentation</a>. Unless files are accessed in binary mode, the <code>open()</code> function returns the file contents as a string.</p>
 <p>In read mode, a data object is created.</p>
 <div id="93332102" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>data_maya <span class="op">=</span> <span class="bu">open</span>(path_maya, mode<span class="op">=</span><span class="st">'r'</span>)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(data_maya)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>data_maya <span class="op">=</span> <span class="bu">open</span>(path_maya, mode<span class="op">=</span><span class="st">'r'</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(data_maya)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;_io.TextIOWrapper name='01-daten/dice-maya.txt' mode='r' encoding='cp1252'&gt;</code></pre>
 </div>
 </div>
 <p>When the data object <code>data_maya</code> is passed to the <code>print()</code> function, Python outputs the class of the object, in this case <code>_io.TextIOWrapper</code>. This class comes from the <code>io</code> module and is responsible for reading and writing text files. In addition, the file object’s attributes—such as the file path, access mode, and file encoding—are displayed (see <a href="#nte-attribute" class="quarto-xref">Beispiel&nbsp;<span>7.1</span></a>). If the encoding is not automatically detected as UTF-8, it can be explicitly specified using the argument <code>encoding = 'UTF-8'</code>.</p>
 <div id="ae0cbb92" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>data_maya <span class="op">=</span> <span class="bu">open</span>(path_maya, mode<span class="op">=</span><span class="st">'r'</span>, encoding<span class="op">=</span><span class="st">'UTF-8'</span>)</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(data_maya)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>data_maya <span class="op">=</span> <span class="bu">open</span>(path_maya, mode<span class="op">=</span><span class="st">'r'</span>, encoding<span class="op">=</span><span class="st">'UTF-8'</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(data_maya)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;_io.TextIOWrapper name='01-daten/dice-maya.txt' mode='r' encoding='UTF-8'&gt;</code></pre>
 </div>
 </div>
 <div id="nte-attribute" class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -396,54 +398,54 @@ Beispiel&nbsp;7.1: Determining an Object’s Attributes
 <div class="callout-body-container callout-body">
 <p>The function <code>dir(object)</code> can be used to list the available attributes of an object. However, it also includes inherited attributes and methods from the object’s class, so the output is often quite extensive. For example, for the integer 1:</p>
 <div id="40b66e2f" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">dir</span>(<span class="dv">1</span>))</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">dir</span>(<span class="dv">1</span>))</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>['__abs__', '__add__', '__and__', '__bool__', '__ceil__', '__class__', '__delattr__', '__dir__', '__divmod__', '__doc__', '__eq__', '__float__', '__floor__', '__floordiv__', '__format__', '__ge__', '__getattribute__', '__getnewargs__', '__getstate__', '__gt__', '__hash__', '__index__', '__init__', '__init_subclass__', '__int__', '__invert__', '__le__', '__lshift__', '__lt__', '__mod__', '__mul__', '__ne__', '__neg__', '__new__', '__or__', '__pos__', '__pow__', '__radd__', '__rand__', '__rdivmod__', '__reduce__', '__reduce_ex__', '__repr__', '__rfloordiv__', '__rlshift__', '__rmod__', '__rmul__', '__ror__', '__round__', '__rpow__', '__rrshift__', '__rshift__', '__rsub__', '__rtruediv__', '__rxor__', '__setattr__', '__sizeof__', '__str__', '__sub__', '__subclasshook__', '__truediv__', '__trunc__', '__xor__', 'as_integer_ratio', 'bit_count', 'bit_length', 'conjugate', 'denominator', 'from_bytes', 'imag', 'is_integer', 'numerator', 'real', 'to_bytes']</code></pre>
 </div>
 </div>
 <p>To limit the output to attributes, the following function can be used:</p>
 <div id="d0925539" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>object_var <span class="op">=</span> <span class="dv">1</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>object_var <span class="op">=</span> <span class="dv">1</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>attributes <span class="op">=</span> [attr <span class="cf">for</span> attr <span class="kw">in</span> <span class="bu">dir</span>(object_var) <span class="cf">if</span> <span class="kw">not</span> <span class="bu">callable</span>(<span class="bu">getattr</span>(object_var, attr))]</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(attributes)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(attributes)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>['__doc__', 'denominator', 'imag', 'numerator', 'real']</code></pre>
 </div>
 </div>
 <p>Attributes enclosed with double underscores are reserved for Python and not intended for the user. The following function removes attributes with double underscores from the output:</p>
 <div id="f28ea4bc" class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>my_object <span class="op">=</span> <span class="dv">1</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>my_object <span class="op">=</span> <span class="dv">1</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>attributes <span class="op">=</span> [attr <span class="cf">for</span> attr <span class="kw">in</span> <span class="bu">dir</span>(my_object) <span class="cf">if</span> <span class="kw">not</span> (<span class="bu">callable</span>(<span class="bu">getattr</span>(my_object, attr)) <span class="kw">or</span> attr.startswith(<span class="st">'__'</span>))]</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(attributes)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(attributes)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>['denominator', 'imag', 'numerator', 'real']</code></pre>
 </div>
 </div>
 <p>In the case of an integer, attributes (to distinguish from floating-point numbers using enclosing parentheses) can be accessed as follows:</p>
 <div id="4216a7d0" class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>(<span class="dv">1</span>).numerator</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>(<span class="dv">1</span>).numerator</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="8">
 <pre><code>1</code></pre>
 </div>
 </div>
 <p>If we look at the attributes of the file object ‘data_maya’, attributes with a single leading underscore stand out.</p>
 <div id="61c5492f" class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>object_ <span class="op">=</span> data_maya</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>object_ <span class="op">=</span> data_maya</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>attributes <span class="op">=</span> [attr <span class="cf">for</span> attr <span class="kw">in</span> <span class="bu">dir</span>(object_) <span class="cf">if</span> <span class="kw">not</span> (<span class="bu">callable</span>(<span class="bu">getattr</span>(object_, attr)) <span class="kw">or</span> attr.startswith(<span class="st">'__'</span>))]</span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(attributes)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(attributes)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>['_CHUNK_SIZE', '_finalizing', 'buffer', 'closed', 'encoding', 'errors', 'line_buffering', 'mode', 'name', 'newlines', 'write_through']</code></pre>
 </div>
 </div>
 <p>These are attributes that should not be accessed by the user (Further information can be found <a href="https://dbader.org/blog/meaning-of-underscores-in-python">here</a>). The following code prints all attributes without leading underscores:</p>
 <div id="80703198" class="cell" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>object_instance <span class="op">=</span> data_maya</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>object_instance <span class="op">=</span> data_maya</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>attributes <span class="op">=</span> [attr <span class="cf">for</span> attr <span class="kw">in</span> <span class="bu">dir</span>(object_instance) <span class="cf">if</span> <span class="kw">not</span> (<span class="bu">callable</span>(<span class="bu">getattr</span>(object_instance, attr)) <span class="kw">or</span> attr.startswith(<span class="st">'_'</span>))]</span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(attributes)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(attributes)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>['buffer', 'closed', 'encoding', 'errors', 'line_buffering', 'mode', 'name', 'newlines', 'write_through']</code></pre>
 </div>
@@ -453,11 +455,11 @@ Beispiel&nbsp;7.1: Determining an Object’s Attributes
 </div>
 <p>File attributes can be accessed using the corresponding commands.</p>
 <div id="4056d50d" class="cell" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"File path: </span><span class="sc">{</span>data_maya<span class="sc">.</span>name<span class="sc">}</span><span class="ch">\n</span><span class="ss">"</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"File path: </span><span class="sc">{</span>data_maya<span class="sc">.</span>name<span class="sc">}</span><span class="ch">\n</span><span class="ss">"</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>      <span class="ss">f"File name: </span><span class="sc">{</span>os<span class="sc">.</span>path<span class="sc">.</span>basename(data_maya.name)<span class="sc">}</span><span class="ch">\n</span><span class="ss">"</span></span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>      <span class="ss">f"File closed: </span><span class="sc">{</span>data_maya<span class="sc">.</span>closed<span class="sc">}</span><span class="ch">\n</span><span class="ss">"</span></span>
 <span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>      <span class="ss">f"Access mode: </span><span class="sc">{</span>data_maya<span class="sc">.</span>mode<span class="sc">}</span><span class="ch">\n</span><span class="ss">"</span></span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>      <span class="ss">f"Encoding: </span><span class="sc">{</span>data_maya<span class="sc">.</span>encoding<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>      <span class="ss">f"Encoding: </span><span class="sc">{</span>data_maya<span class="sc">.</span>encoding<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>File path: 01-daten/dice-maya.txt
 File name: dice-maya.txt
@@ -487,11 +489,11 @@ Tipp&nbsp;7.2: Fallback Option
 <h3 class="anchored" data-anchor-id="sec-file-content">Print File Content</h3>
 <p>To print the content of a file, the data object can be iterated line by line using a loop. (The file <code>dice-maya</code> only has one line.)</p>
 <div id="e816af63" class="cell" data-execution_count="12">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>i <span class="op">=</span> <span class="dv">0</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>i <span class="op">=</span> <span class="dv">0</span></span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> line <span class="kw">in</span> data_maya:</span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Content of line </span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">, with </span><span class="sc">{</span><span class="bu">len</span>(line)<span class="sc">}</span><span class="ss"> characters:"</span>)</span>
 <span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(line)</span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>    i <span class="op">+=</span> <span class="dv">1</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>    i <span class="op">+=</span> <span class="dv">1</span></span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Content of line 0, with 28 characters:
 "5", "6", "2", "1", "4", "5"</code></pre>
@@ -504,10 +506,10 @@ Tipp&nbsp;7.2: Fallback Option
 <h2 data-number="7.2" class="anchored" data-anchor-id="reading-files"><span class="header-section-number">7.2</span> Reading Files</h2>
 <p>To read the entire content of a file, you can use the method <a href="https://docs.python.org/3/tutorial/inputoutput.html">file_object.read()</a>. The method has an optional parameter <code>.read(size)</code>. The <code>size</code> is passed as an integer, and the corresponding number of characters (or bytes in binary mode) will be read, up to the end of the file. The <code>size</code> parameter is useful for checking the formatting of a large file’s content while limiting the output to a manageable number of characters.</p>
 <div id="c683dfd9" class="cell" data-execution_count="13">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>eyes_maya <span class="op">=</span> data_maya.read()</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>eyes_maya <span class="op">=</span> data_maya.read()</span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"len(eyes_maya): </span><span class="sc">{</span><span class="bu">len</span>(eyes_maya)<span class="sc">}</span><span class="ch">\n\n</span><span class="ss">"</span></span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>      <span class="ss">f"Content of the file eyes_maya:</span><span class="ch">\n</span><span class="sc">{</span>eyes_maya<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>      <span class="ss">f"Content of the file eyes_maya:</span><span class="ch">\n</span><span class="sc">{</span>eyes_maya<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>len(eyes_maya): 0
 
@@ -556,14 +558,14 @@ Abbildung&nbsp;7.1: Movement of the file pointer when reading three characters
 </div>
 <p>If the file pointer is moved back to the start using <code>data_object.seek(0)</code>, reading the file succeeds.</p>
 <div id="cc5c850d" class="cell" data-results="hold" data-execution_count="14">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"File pointer position before resetting to 0: </span><span class="sc">{</span>data_maya<span class="sc">.</span>tell()<span class="sc">}</span><span class="ss">"</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"File pointer position before resetting to 0: </span><span class="sc">{</span>data_maya<span class="sc">.</span>tell()<span class="sc">}</span><span class="ss">"</span>)</span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>data_maya.seek(<span class="dv">0</span>)<span class="op">;</span></span>
 <span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"File pointer position after resetting to 0: </span><span class="sc">{</span>data_maya<span class="sc">.</span>tell()<span class="sc">}</span><span class="ss">"</span>)</span>
 <span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>eyes_maya <span class="op">=</span> data_maya.read()</span>
 <span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Content of the object eyes_maya:</span><span class="ch">\n</span><span class="sc">{</span>eyes_maya<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Content of the object eyes_maya:</span><span class="ch">\n</span><span class="sc">{</span>eyes_maya<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>File pointer position before resetting to 0: 28
 File pointer position after resetting to 0: 0
@@ -573,7 +575,7 @@ Content of the object eyes_maya:
 </div>
 <p><strong>Print the numbers at the second and third positions (i.e., 6 and 2) from the data object <code>data_maya</code> using the <code>.seek()</code> and <code>.read()</code> methods.</strong></p>
 <div id="tip-solution-pattern-file-pointer" class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -585,11 +587,11 @@ Tipp&nbsp;7.3: Example Solution: Moving the File Pointer
 <div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div id="d8db5b0c" class="cell" data-execution_count="15">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>data_maya.seek(<span class="dv">6</span>, <span class="dv">0</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>data_maya.seek(<span class="dv">6</span>, <span class="dv">0</span>)</span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(data_maya.read(<span class="dv">1</span>))</span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>data_maya.seek(data_maya.tell() <span class="op">+</span> <span class="dv">4</span>, <span class="dv">0</span>)</span>
-<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(data_maya.read(<span class="dv">1</span>))</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(data_maya.read(<span class="dv">1</span>))</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>6
 2</code></pre>
@@ -600,14 +602,14 @@ Tipp&nbsp;7.3: Example Solution: Moving the File Pointer
 </div>
 <p>To add Maya’s dice results, the numbers must be extracted and converted to integers, because in text mode a string is always returned.</p>
 <div id="a928996d" class="cell" data-execution_count="16">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(eyes_maya))</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(eyes_maya))</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;class 'str'&gt;</code></pre>
 </div>
 </div>
 <p>Here, the leading and trailing quotation marks are removed using <code>str.strip(")</code>, and then the string is split into a list using <code>str.split('", "')</code>. Afterwards, the list elements are converted to integers and summed. (String manipulation methods will be covered in detail in the next section.)</p>
 <div id="e7f36bf5" class="cell" data-results="hold" data-execution_count="17">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"eyes_maya:</span><span class="ch">\n</span><span class="sc">{</span>eyes_maya<span class="sc">}</span><span class="ss">"</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"eyes_maya:</span><span class="ch">\n</span><span class="sc">{</span>eyes_maya<span class="sc">}</span><span class="ss">"</span>)</span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>eyes_maya <span class="op">=</span> eyes_maya.strip(<span class="st">'"'</span>)</span>
 <span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">eyes_maya.strip('</span><span class="ch">\"</span><span class="ss">'):</span><span class="ch">\n</span><span class="sc">{</span>eyes_maya<span class="sc">}</span><span class="ss">"</span>)</span>
@@ -619,7 +621,7 @@ Tipp&nbsp;7.3: Example Solution: Moving the File Pointer
 <span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> eyes_maya:</span>
 <span id="cb31-11"><a href="#cb31-11" aria-hidden="true" tabindex="-1"></a>    eyes_maya_int.append(<span class="bu">int</span>(i))</span>
 <span id="cb31-12"><a href="#cb31-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-13"><a href="#cb31-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">eyes_maya_int:</span><span class="ch">\n</span><span class="sc">{</span>eyes_maya_int<span class="sc">}</span><span class="ch">\n\n</span><span class="ss">Total eyes: </span><span class="sc">{</span><span class="bu">sum</span>(eyes_maya_int)<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb31-13"><a href="#cb31-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">eyes_maya_int:</span><span class="ch">\n</span><span class="sc">{</span>eyes_maya_int<span class="sc">}</span><span class="ch">\n\n</span><span class="ss">Total eyes: </span><span class="sc">{</span><span class="bu">sum</span>(eyes_maya_int)<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>eyes_maya:
 "5", "6", "2", "1", "4", "5"
@@ -640,7 +642,7 @@ Total eyes: 23</code></pre>
 <h4 class="anchored" data-anchor-id="closing-a-file">Closing a File</h4>
 <p>After accessing a file, it must be closed to free it up for other programs.</p>
 <div id="875fb278" class="cell" data-execution_count="18">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>data_maya.close()</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>data_maya.close()</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="wrn-write-operations" class="callout callout-style-simple callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -661,7 +663,7 @@ Hinweis&nbsp;7.2: Writing Operations with Python
 <h2 data-number="7.3" class="anchored" data-anchor-id="task-reading-files"><span class="header-section-number">7.3</span> Task: Reading Files</h2>
 <p><strong>What dice score did Hans achieve?</strong></p>
 <div id="tip-solution-dice-score-comparison" class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -674,7 +676,7 @@ Tipp&nbsp;7.4: Sample Solution: Dice Score Comparison
 <div class="callout-body-container callout-body">
 <div class="border">
 <div id="a635f3ff" class="cell" data-execution_count="19">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co"># First, read the file:</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co"># First, read the file:</span></span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>data_hans <span class="op">=</span> <span class="bu">open</span>(path_hans, mode<span class="op">=</span><span class="st">'r'</span>, encoding<span class="op">=</span><span class="st">'UTF-8'</span>)</span>
 <span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>dice_hans <span class="op">=</span> data_hans.read()</span>
 <span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(dice_hans)</span>
@@ -693,7 +695,7 @@ Tipp&nbsp;7.4: Sample Solution: Dice Score Comparison
 <span id="cb34-17"><a href="#cb34-17" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> dice_hans:</span>
 <span id="cb34-18"><a href="#cb34-18" aria-hidden="true" tabindex="-1"></a>    dice_hans_int.append(<span class="bu">int</span>(i))</span>
 <span id="cb34-19"><a href="#cb34-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-20"><a href="#cb34-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Total dice score of Hans: </span><span class="sc">{</span><span class="bu">sum</span>(dice_hans_int)<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb34-20"><a href="#cb34-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Total dice score of Hans: </span><span class="sc">{</span><span class="bu">sum</span>(dice_hans_int)<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>"Hans", "3", "5", "1", "3", "2", "5"
 ['3', '5', '1', '3', '2', '5']
@@ -728,11 +730,11 @@ Total dice score of Hans: 19</code></pre>
 <p>&nbsp;</p>
 <p>To get an overview of the file’s structure, the first three lines of the file are printed. The file can be iterated line by line using a for-loop, which is stopped using the <code>break</code> keyword when the loop variable reaches the value 3. Another option is to use the method <code>file_object.readline()</code>, which reads a single line. Here, the number of loop iterations is controlled by the loop variable with <code>for i in range(3):</code>.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">for-loop with break</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Method <code>file_object.readline()</code></a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">for-loop with break</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Method <code>file_object.readline()</code></a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <div id="c93b20fe" class="cell" data-execution_count="20">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>file_path <span class="op">=</span> <span class="st">"01-daten/einwohner_europa_2019.csv"</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>file_path <span class="op">=</span> <span class="st">"01-daten/einwohner_europa_2019.csv"</span></span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>population_file <span class="op">=</span> <span class="bu">open</span>(file_path, <span class="st">'r'</span>)</span>
 <span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a><span class="co"># view the first 3 lines</span></span>
@@ -745,7 +747,7 @@ Total dice score of Hans: 19</code></pre>
 <span id="cb36-11"><a href="#cb36-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">break</span></span>
 <span id="cb36-12"><a href="#cb36-12" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb36-13"><a href="#cb36-13" aria-hidden="true" tabindex="-1"></a><span class="co"># close the file</span></span>
-<span id="cb36-14"><a href="#cb36-14" aria-hidden="true" tabindex="-1"></a>population_file.close()</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb36-14"><a href="#cb36-14" aria-hidden="true" tabindex="-1"></a>population_file.close()</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>GEO,Value
 
@@ -759,14 +761,14 @@ Bulgarien,7000039
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
 <p>The method <code>file_object.readline()</code> can be used to read a single line from a file.</p>
 <div id="73db3208" class="cell" data-execution_count="21">
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>file_path <span class="op">=</span> <span class="st">"01-daten/einwohner_europa_2019.csv"</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>file_path <span class="op">=</span> <span class="st">"01-daten/einwohner_europa_2019.csv"</span></span>
 <span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>population_file <span class="op">=</span> <span class="bu">open</span>(file_path, <span class="st">'r'</span>)</span>
 <span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">3</span>):</span>
 <span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(population_file.readline())</span>
 <span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Close the file</span></span>
-<span id="cb38-8"><a href="#cb38-8" aria-hidden="true" tabindex="-1"></a>population_file.close()</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb38-8"><a href="#cb38-8" aria-hidden="true" tabindex="-1"></a>population_file.close()</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>GEO,Value
 
@@ -782,14 +784,14 @@ Bulgarien,7000039
 <p>The file has two columns. The first column contains country names, the second column contains values. Commas are used as separators. The first row contains the column headers.</p>
 <p>In the previous section, we learned the method <code>file_object.read()</code>, which reads an entire file as a string. First, the file is read into the variable <code>population</code> using <code>file_object.read()</code> and then closed.</p>
 <div id="115c3b4f" class="cell" data-execution_count="22">
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>file_path <span class="op">=</span> <span class="st">"01-daten/einwohner_europa_2019.csv"</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>file_path <span class="op">=</span> <span class="st">"01-daten/einwohner_europa_2019.csv"</span></span>
 <span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>file_object_population <span class="op">=</span> <span class="bu">open</span>(file_path, <span class="st">'r'</span>)</span>
 <span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>population <span class="op">=</span> file_object_population.read()</span>
 <span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(population)</span>
 <span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Close the file</span></span>
-<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a>file_object_population.close()</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a>file_object_population.close()</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>GEO,Value
 Belgien,11467923
@@ -826,24 +828,24 @@ Vereinigtes Koenigreich,66647112
 </div>
 <p>Afterwards, the read-in data can be split line by line using the <code>str.split('\n')</code> method. <code>'\n'</code> is passed as the argument to indicate the line break. The method returns a list.</p>
 <div id="3883e695" class="cell" data-execution_count="23">
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>population_list_by_line <span class="op">=</span> population.split(<span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span>
-<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(population_list_by_line[<span class="dv">0</span>:<span class="dv">3</span>])</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>population_list_by_line <span class="op">=</span> population.split(<span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(population_list_by_line[<span class="dv">0</span>:<span class="dv">3</span>])</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>['GEO,Value', 'Belgien,11467923', 'Bulgarien,7000039']</code></pre>
 </div>
 </div>
 <p>The list contains the column headers at the index position. These can be removed from the list using the method <code>list.pop(index)</code> and simultaneously stored in a new object.</p>
 <div id="daedf63e" class="cell" data-execution_count="24">
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>column_names <span class="op">=</span> population_list_by_line.pop(<span class="dv">0</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>column_names <span class="op">=</span> population_list_by_line.pop(<span class="dv">0</span>)</span>
 <span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>column_names <span class="op">=</span> column_names.split(<span class="st">','</span>)</span>
-<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Header of column 0: </span><span class="sc">{</span>column_names[<span class="dv">0</span>]<span class="sc">}</span><span class="ch">\t</span><span class="ss">Header of column 1: </span><span class="sc">{</span>column_names[<span class="dv">1</span>]<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Header of column 0: </span><span class="sc">{</span>column_names[<span class="dv">0</span>]<span class="sc">}</span><span class="ch">\t</span><span class="ss">Header of column 1: </span><span class="sc">{</span>column_names[<span class="dv">1</span>]<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Header of column 0: GEO Header of column 1: Value</code></pre>
 </div>
 </div>
 <p>Afterwards, the list can be split into countries and values using the <code>str.split(',')</code> method. However, the process fails with an error. The error is caught in the following code block using exception handling. In addition to the error message, the list entry that caused it and its index position are also displayed.</p>
 <div id="8368dab4" class="cell" data-execution_count="25">
-<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create empty lists before the loop</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create empty lists before the loop</span></span>
 <span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>geo <span class="op">=</span> []</span>
 <span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>population <span class="op">=</span> []</span>
 <span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -864,7 +866,7 @@ Vereinigtes Koenigreich,66647112
 <span id="cb46-19"><a href="#cb46-19" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Error message: </span><span class="sc">{</span>error<span class="sc">}</span><span class="ss">"</span>)</span>
 <span id="cb46-20"><a href="#cb46-20" aria-hidden="true" tabindex="-1"></a>    </span>
 <span id="cb46-21"><a href="#cb46-21" aria-hidden="true" tabindex="-1"></a>    <span class="co"># print entry and index</span></span>
-<span id="cb46-22"><a href="#cb46-22" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Entry: </span><span class="sc">{</span>entry<span class="sc">}</span><span class="ch">\t</span><span class="ss"> Line index: </span><span class="sc">{</span>population_list_by_line<span class="sc">.</span>index(line)<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb46-22"><a href="#cb46-22" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Entry: </span><span class="sc">{</span>entry<span class="sc">}</span><span class="ch">\t</span><span class="ss"> Line index: </span><span class="sc">{</span>population_list_by_line<span class="sc">.</span>index(line)<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Error message: list index out of range
 Entry: ['']  Line index: 29</code></pre>
@@ -873,7 +875,7 @@ Entry: ['']  Line index: 29</code></pre>
 <p>The error message indicates that one of the list operations using the slice operator is accessing an invalid index. With a slight adjustment, the code block also reveals the cause of the error.</p>
 <p>If the empty line is removed from the list, splitting the country names and the values works correctly.</p>
 <div id="1e2ebb61" class="cell" data-execution_count="26">
-<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="co"># remove empty line</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="co"># remove empty line</span></span>
 <span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>population_list_by_line.remove(<span class="st">''</span>)</span>
 <span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize empty lists before the loop</span></span>
@@ -893,7 +895,7 @@ Entry: ['']  Line index: 29</code></pre>
 <span id="cb48-18"><a href="#cb48-18" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(population_numbers)</span>
 <span id="cb48-19"><a href="#cb48-19" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb48-20"><a href="#cb48-20" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span> <span class="pp">IndexError</span> <span class="im">as</span> error:</span>
-<span id="cb48-21"><a href="#cb48-21" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(error)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb48-21"><a href="#cb48-21" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(error)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>GEO
 ['Belgien', 'Bulgarien', 'Tschechien', 'Daenemark', 'Deutschland einschliesslich ehemalige DDR', 'Estland', 'Irland', 'Griechenland', 'Spanien', 'Frankreich', 'Kroatien', 'Italien', 'Zypern', 'Lettland', 'Litauen', 'Luxemburg', 'Uganda', 'Ungarn', 'Malta', 'Niederlande', 'Oesterreich', 'Polen', 'Portugal', 'Rumaenien', 'Slowenien', 'Slowakei', 'Finnland', 'Schweden', 'Vereinigtes Koenigreich'] 
@@ -915,19 +917,19 @@ Value
 <li><p>What is the data type of the entries in the <code>population</code> list?</p></li>
 </ul>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Sample Solution: Full File Reading
+<span class="screen-reader-only">Tipp</span>Sample Solution: Full File Reading
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-8" class="callout-8-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div id="aa0362f4" class="cell" data-execution_count="27">
-<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Determine the minimum and maximum population values and the corresponding countries</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Determine the minimum and maximum population values and the corresponding countries</span></span>
 <span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>population_list <span class="op">=</span> []</span>
 <span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> element <span class="kw">in</span> population:</span>
 <span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a>     population_list.append(<span class="bu">int</span>(element))</span>
@@ -959,7 +961,7 @@ Sample Solution: Full File Reading
 <span id="cb50-30"><a href="#cb50-30" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb50-31"><a href="#cb50-31" aria-hidden="true" tabindex="-1"></a><span class="co"># 4.</span></span>
 <span id="cb50-32"><a href="#cb50-32" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"The list 'population' has the data type </span><span class="sc">{</span><span class="bu">type</span>(population)<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb50-33"><a href="#cb50-33" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"The entries in the list have the data type </span><span class="sc">{</span><span class="bu">type</span>(population[<span class="dv">0</span>])<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb50-33"><a href="#cb50-33" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"The entries in the list have the data type </span><span class="sc">{</span><span class="bu">type</span>(population[<span class="dv">0</span>])<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Maximum: Deutschland einschliesslich ehemalige DDR with 82940663 inhabitants
 Minimum: Malta with 493559 inhabitants
@@ -977,7 +979,7 @@ The entries in the list have the data type &lt;class 'int'&gt;</code></pre>
 <h2 data-number="7.6" class="anchored" data-anchor-id="reading-as-a-list"><span class="header-section-number">7.6</span> Reading as a List</h2>
 <p>A file object can also be read directly into a list. The method <code>file_object.readlines()</code> returns a list where each line is an entry. Similarly, the <code>list()</code> function can be applied to file objects. Both approaches return the same list, including the newline character <code>\n</code>.</p>
 <div id="1b802f98" class="cell" data-execution_count="28">
-<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>file_path <span class="op">=</span> <span class="st">"01-daten/einwohner_europa_2019.csv"</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb52"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>file_path <span class="op">=</span> <span class="st">"01-daten/einwohner_europa_2019.csv"</span></span>
 <span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>file_object_population <span class="op">=</span> <span class="bu">open</span>(file_path, <span class="st">'r'</span>)</span>
 <span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Using readlines method</span></span>
@@ -992,7 +994,7 @@ The entries in the list have the data type &lt;class 'int'&gt;</code></pre>
 <span id="cb52-13"><a href="#cb52-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(population)</span>
 <span id="cb52-14"><a href="#cb52-14" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb52-15"><a href="#cb52-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Close the file</span></span>
-<span id="cb52-16"><a href="#cb52-16" aria-hidden="true" tabindex="-1"></a>file_object_population.close()<span class="op">;</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb52-16"><a href="#cb52-16" aria-hidden="true" tabindex="-1"></a>file_object_population.close()<span class="op">;</span></span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>['GEO,Value\n', 'Belgien,11467923\n', 'Bulgarien,7000039\n', 'Tschechien,10528984\n', 'Daenemark,5799763\n', 'Deutschland einschliesslich ehemalige DDR,82940663\n', 'Estland,1324820\n', 'Irland,4904240\n', 'Griechenland,10722287\n', 'Spanien,46934632\n', 'Frankreich,67028048\n', 'Kroatien,4076246\n', 'Italien,61068437\n', 'Zypern,875898\n', 'Lettland,1919968\n', 'Litauen,2794184\n', 'Luxemburg,612179\n', 'Uganda,-1\n', 'Ungarn,9772756\n', 'Malta,493559\n', 'Niederlande,17423013\n', 'Oesterreich,8842000\n', 'Polen,37972812\n', 'Portugal,10276617\n', 'Rumaenien,19405156\n', 'Slowenien,2080908\n', 'Slowakei,5450421\n', 'Finnland,5512119\n', 'Schweden,10243000\n', 'Vereinigtes Koenigreich,66647112\n']
 ['GEO,Value\n', 'Belgien,11467923\n', 'Bulgarien,7000039\n', 'Tschechien,10528984\n', 'Daenemark,5799763\n', 'Deutschland einschliesslich ehemalige DDR,82940663\n', 'Estland,1324820\n', 'Irland,4904240\n', 'Griechenland,10722287\n', 'Spanien,46934632\n', 'Frankreich,67028048\n', 'Kroatien,4076246\n', 'Italien,61068437\n', 'Zypern,875898\n', 'Lettland,1919968\n', 'Litauen,2794184\n', 'Luxemburg,612179\n', 'Uganda,-1\n', 'Ungarn,9772756\n', 'Malta,493559\n', 'Niederlande,17423013\n', 'Oesterreich,8842000\n', 'Polen,37972812\n', 'Portugal,10276617\n', 'Rumaenien,19405156\n', 'Slowenien,2080908\n', 'Slowakei,5450421\n', 'Finnland,5512119\n', 'Schweden,10243000\n', 'Vereinigtes Koenigreich,66647112\n']</code></pre>
@@ -1001,11 +1003,11 @@ The entries in the list have the data type &lt;class 'int'&gt;</code></pre>
 <p>To remove the line break, you could use the slice operator to remove the last character of each list entry.</p>
 <p>Another option is the <code>str.replace(old, new, count=-1)</code> method, which can be used to replace or delete characters. The parameters <code>old</code> and <code>new</code> specify the string to be replaced and the string to insert, and <em>must be passed positionally</em>. The <code>count</code> parameter controls how many occurrences of <code>old</code> are replaced. By default, every occurrence is replaced.</p>
 <div id="6348c974" class="cell" data-execution_count="29">
-<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Dog'</span>.replace(<span class="st">'Do'</span>, <span class="st">'Mu'</span>))</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb54"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Dog'</span>.replace(<span class="st">'Do'</span>, <span class="st">'Mu'</span>))</span>
 <span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a>string_value <span class="op">=</span> <span class="st">'A  short text without  double spaces.'</span></span>
 <span id="cb54-4"><a href="#cb54-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-5"><a href="#cb54-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(string_value.replace(<span class="st">'  '</span>, <span class="st">' '</span>))</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb54-5"><a href="#cb54-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(string_value.replace(<span class="st">'  '</span>, <span class="st">' '</span>))</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Mug
 A short text without double spaces.</code></pre>
@@ -1013,14 +1015,14 @@ A short text without double spaces.</code></pre>
 </div>
 <p>The <code>str.replace()</code> method can also be used for deletion. If an empty string is passed as the <code>new</code> parameter, the substring given in <code>old</code> will be removed.</p>
 <div id="0f357e39" class="cell" data-execution_count="30">
-<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(string_value.replace(<span class="st">' '</span>, <span class="st">''</span>).replace(<span class="st">'double'</span>, <span class="st">''</span>))</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb56"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(string_value.replace(<span class="st">' '</span>, <span class="st">''</span>).replace(<span class="st">'double'</span>, <span class="st">''</span>))</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Ashorttextwithoutspaces.</code></pre>
 </div>
 </div>
 <p>The <code>str.replace()</code> method can be used to clean the newline characters from the read-in list.</p>
 <div id="04909588" class="cell" data-execution_count="31">
-<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>file_path <span class="op">=</span> <span class="st">"01-daten/einwohner_europa_2019.csv"</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb58"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>file_path <span class="op">=</span> <span class="st">"01-daten/einwohner_europa_2019.csv"</span></span>
 <span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a>population_file <span class="op">=</span> <span class="bu">open</span>(file_path, <span class="st">'r'</span>)</span>
 <span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb58-4"><a href="#cb58-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Using readlines method</span></span>
@@ -1034,7 +1036,7 @@ A short text without double spaces.</code></pre>
 <span id="cb58-12"><a href="#cb58-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(population)</span>
 <span id="cb58-13"><a href="#cb58-13" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb58-14"><a href="#cb58-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Close the file</span></span>
-<span id="cb58-15"><a href="#cb58-15" aria-hidden="true" tabindex="-1"></a>population_file.close()</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb58-15"><a href="#cb58-15" aria-hidden="true" tabindex="-1"></a>population_file.close()</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>['GEO,Value', 'Belgien,11467923', 'Bulgarien,7000039', 'Tschechien,10528984', 'Daenemark,5799763', 'Deutschland einschliesslich ehemalige DDR,82940663', 'Estland,1324820', 'Irland,4904240', 'Griechenland,10722287', 'Spanien,46934632', 'Frankreich,67028048', 'Kroatien,4076246', 'Italien,61068437', 'Zypern,875898', 'Lettland,1919968', 'Litauen,2794184', 'Luxemburg,612179', 'Uganda,-1', 'Ungarn,9772756', 'Malta,493559', 'Niederlande,17423013', 'Oesterreich,8842000', 'Polen,37972812', 'Portugal,10276617', 'Rumaenien,19405156', 'Slowenien,2080908', 'Slowakei,5450421', 'Finnland,5512119', 'Schweden,10243000', 'Vereinigtes Koenigreich,66647112']</code></pre>
 </div>
@@ -1044,7 +1046,7 @@ A short text without double spaces.</code></pre>
 <h2 data-number="7.7" class="anchored" data-anchor-id="writing-files"><span class="header-section-number">7.7</span> Writing Files</h2>
 <p>To write files, you need to use the <code>write</code> method of a file object. This method takes the string you want to write as an argument.</p>
 <div id="0939b4f6" class="cell" data-execution_count="32">
-<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>file_path <span class="op">=</span> <span class="st">"01-daten/neue_datei.txt"</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb60"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>file_path <span class="op">=</span> <span class="st">"01-daten/neue_datei.txt"</span></span>
 <span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb60-3"><a href="#cb60-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Open file for writing</span></span>
 <span id="cb60-4"><a href="#cb60-4" aria-hidden="true" tabindex="-1"></a><span class="bu">file</span> <span class="op">=</span> <span class="bu">open</span>(file_path, mode<span class="op">=</span><span class="st">'w'</span>)</span>
@@ -1054,15 +1056,15 @@ A short text without double spaces.</code></pre>
 <span id="cb60-8"><a href="#cb60-8" aria-hidden="true" tabindex="-1"></a><span class="bu">file</span>.write(<span class="st">"CHAPTER 1: The Beginning is Always Hard</span><span class="ch">\n</span><span class="st">Placeholder: I will write the rest later."</span>)</span>
 <span id="cb60-9"><a href="#cb60-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb60-10"><a href="#cb60-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Close the file</span></span>
-<span id="cb60-11"><a href="#cb60-11" aria-hidden="true" tabindex="-1"></a><span class="bu">file</span>.close()</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb60-11"><a href="#cb60-11" aria-hidden="true" tabindex="-1"></a><span class="bu">file</span>.close()</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>The file can now be read.</p>
 <div id="4e5db294" class="cell" data-execution_count="33">
-<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a>file_content <span class="op">=</span> <span class="bu">open</span>(file_path, mode<span class="op">=</span><span class="st">'r'</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb61"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a>file_content <span class="op">=</span> <span class="bu">open</span>(file_path, mode<span class="op">=</span><span class="st">'r'</span>)</span>
 <span id="cb61-2"><a href="#cb61-2" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> file_content.read()</span>
 <span id="cb61-3"><a href="#cb61-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(text)</span>
 <span id="cb61-4"><a href="#cb61-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb61-5"><a href="#cb61-5" aria-hidden="true" tabindex="-1"></a>file_content.close()</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb61-5"><a href="#cb61-5" aria-hidden="true" tabindex="-1"></a>file_content.close()</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>PROCRASTINATION AT UNIVERSITIES
 
@@ -1138,13 +1140,14 @@ Arnold, Simone. 2023. <span>„Datenanalyse mit Python. Funktionen Module Dateie
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
