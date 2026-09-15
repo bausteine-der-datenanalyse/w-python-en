@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.10.18">
@@ -14,6 +14,7 @@
 <meta name="author" content="Franca Hoillmann">
 <meta name="author" content="Maik Poetzsch">
 <meta name="author" content="Sebastian Seipel">
+<meta name="dcterms.date" content="2026-09-15">
 
 <title>Bausteine Computergestützter Datenanalyse</title>
 <style>
@@ -69,17 +70,17 @@ ul.task-list li input[type="checkbox"] {
   ],
   "show-item-context": false,
   "language": {
-    "search-no-results-text": "Keine Treffer",
-    "search-matching-documents-text": "Treffer",
-    "search-copy-link-title": "Link in die Suche kopieren",
-    "search-hide-matches-text": "Zusätzliche Treffer verbergen",
-    "search-more-match-text": "weitere Treffer in diesem Dokument",
-    "search-more-matches-text": "weitere Treffer in diesem Dokument",
-    "search-clear-button-title": "Zurücksetzen",
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
     "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Abbrechen",
-    "search-submit-button-title": "Abschicken",
-    "search-label": "Suchen"
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 <link rel="shortcut icon" href="skript/00-bilder/favicon_bcd_new.svg">
@@ -94,13 +95,13 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Werkzeugbaustein Python</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Python Tool Module</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Suchen" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -116,12 +117,12 @@ ul.task-list li input[type="checkbox"] {
       <img src="./skript/00-bilder/logo_with_text_new.svg" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
       </a>
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Werkzeugbaustein Python</a> 
+      <a href="./">Python Tool Module</a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Suchen"></div>
+        <div id="quarto-search" class="" title="Search"></div>
         </div>
         </div>
     <div class="sidebar-menu-container"> 
@@ -129,7 +130,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Werkzeugbaustein Python</span></a>
+ <span class="menu-text">Python Tool Module</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -193,13 +194,13 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Inhaltsverzeichnis</h2>
+    <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#werkzeugbaustein-python" id="toc-werkzeugbaustein-python" class="nav-link active" data-scroll-target="#werkzeugbaustein-python">Werkzeugbaustein Python</a>
+  <li><a href="#python-tool-module" id="toc-python-tool-module" class="nav-link active" data-scroll-target="#python-tool-module">Python Tool Module</a>
   <ul class="collapse">
-  <li><a href="#voraussetzungen" id="toc-voraussetzungen" class="nav-link" data-scroll-target="#voraussetzungen">Voraussetzungen</a></li>
-  <li><a href="#lernziele" id="toc-lernziele" class="nav-link" data-scroll-target="#lernziele">Lernziele</a></li>
+  <li><a href="#prerequisites" id="toc-prerequisites" class="nav-link" data-scroll-target="#prerequisites">Prerequisites</a></li>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -217,7 +218,7 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-title-meta">
 
     <div>
-    <div class="quarto-title-meta-heading">Autor:innen</div>
+    <div class="quarto-title-meta-heading">Authors</div>
     <div class="quarto-title-meta-contents">
              <p>Lukas Arnold </p>
              <p>Simone Arnold </p>
@@ -231,9 +232,9 @@ ul.task-list li input[type="checkbox"] {
   </div>
     
     <div>
-    <div class="quarto-title-meta-heading">Veröffentlichungsdatum</div>
+    <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">15. September 2026</p>
+      <p class="date">September 15, 2026</p>
     </div>
   </div>
   
@@ -245,35 +246,35 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="werkzeugbaustein-python" class="level1 unnumbered">
-<h1 class="unnumbered">Werkzeugbaustein Python</h1>
+<section id="python-tool-module" class="level1 unnumbered">
+<h1 class="unnumbered">Python Tool Module</h1>
 <div id="Lizenz" class="border">
 <div class="quarto-layout-panel" data-layout="[20, 80]">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 20.0%;justify-content: center;">
-<p><img src="skript/00-bilder/CC-BY.svg" class="img-fluid" alt="Symbol des Lizenzhinweises Creative Commons BY"></p>
+<p><img src="skript/00-bilder/CC-BY.svg" class="img-fluid" alt="Symbol of the Creative Commons BY license notice"></p>
 </div>
 <div class="quarto-layout-cell" style="flex-basis: 80.0%;justify-content: flex-start;">
-<p>Bausteine Computergestützter Datenanalyse von Lukas Arnold, Simone Arnold, Florian Bagemihl, Matthias Baitsch, Marc Fehr, Franca Hollmann, Maik Poetzsch und Sebastian Seipel. Werkzeugbaustein Python von Marc Fehr und Maik Poetzsch ist lizensiert unter <a href="https://creativecommons.org/licenses/by/4.0/deed.de">CC BY 4.0</a>. Das Werk ist abrufbar auf <a href="https://github.com/bausteine-der-datenanalyse/w-python">GitHub</a>. Ausgenommen von der Lizenz sind alle Logos Dritter und anders gekennzeichneten Inhalte. 2025</p>
+<p>Bausteine Computergestützter Datenanalyse by Lukas Arnold, Simone Arnold, Florian Bagemihl, Matthias Baitsch, Marc Fehr, Franca Hollmann, Maik Poetzsch and Sebastian Seipel. Python Tool Module by Marc Fehr and Maik Poetzsch is licensed under <a href="https://creativecommons.org/licenses/by/4.0/deed.de">CC BY 4.0</a>. The work is available on <a href="https://github.com/bausteine-der-datenanalyse/w-python-en">GitHub</a>. Excluded from the license are all third-party logos and otherwise marked content. 2025</p>
 </div>
 </div>
 </div>
-<p>Zitiervorschlag</p>
-<p>Arnold, Lukas, Simone Arnold, Matthias Baitsch, Marc Fehr, Franca Hollmann, Maik Poetzsch, und Sebastian Seipel. 2025. „Bausteine Computergestützter Datenanalyse. Werkzeugbaustein Python“. <a href="https://github.com/bausteine-der-datenanalyse/w-python" class="uri">https://github.com/bausteine-der-datenanalyse/w-python</a>.</p>
-<p>BibTeX-Vorlage</p>
+<p>Suggested citation</p>
+<p>Arnold, Lukas, Simone Arnold, Matthias Baitsch, Marc Fehr, Franca Hollmann, Maik Poetzsch, and Sebastian Seipel. 2025. “Bausteine Computergestützter Datenanalyse. Python Tool Module”. <a href="https://github.com/bausteine-der-datenanalyse/w-python-en" class="uri">https://github.com/bausteine-der-datenanalyse/w-python-en</a>.</p>
+<p>BibTeX template</p>
 <pre><code>@misc{BCD-w-python-2025,
- title={Bausteine Computergestützter Datenanalyse. Werkzeugbaustein Python},
+ title={Bausteine Computergestützter Datenanalyse. Python Tool Module},
  author={Arnold, Lukas and Arnold, Simone and Baitsch, Matthias and Fehr, Marc and Hollmann, Franca and Poetzsch, Maik and Seipel, Sebastian},
  year={2025},
- url={https://github.com/bausteine-der-datenanalyse/w-python}} </code></pre>
+ url={https://github.com/bausteine-der-datenanalyse/w-python-en}}</code></pre>
 </div>
-<section id="voraussetzungen" class="level2">
-<h2 class="anchored" data-anchor-id="voraussetzungen">Voraussetzungen</h2>
+<section id="prerequisites" class="level2">
+<h2 class="anchored" data-anchor-id="prerequisites">Prerequisites</h2>
 <p>No prerequisites; the <a href="https://bausteine-der-datenanalyse.github.io/w-pseudocode/Pseudocode.html">Pseudocode Tool Module</a> is helpful.</p>
-<p>The estimated time to complete this module is approximately <strong>placeholder</strong>.</p>
+<p>The estimated time to complete this module is approximately 30 hours.</p>
 </section>
-<section id="lernziele" class="level2">
-<h2 class="anchored" data-anchor-id="lernziele">Lernziele</h2>
+<section id="learning-objectives" class="level2">
+<h2 class="anchored" data-anchor-id="learning-objectives">Learning Objectives</h2>
 <p>In this module, the fundamentals of programming with Python are introduced. In this module, you will learn to…</p>
 <ul>
 <li><p>Become familiar with the basic concepts of object-oriented programming.</p></li>
@@ -314,12 +315,12 @@ ul.task-list li input[type="checkbox"] {
       // flash "checked"
       button.classList.add('code-copy-button-checked');
       var currentTitle = button.getAttribute("title");
-      button.setAttribute("title", "Kopiert");
+      button.setAttribute("title", "Copied!");
       let tooltip;
       if (window.bootstrap) {
         button.setAttribute("data-bs-toggle", "tooltip");
         button.setAttribute("data-bs-placement", "left");
-        button.setAttribute("data-bs-title", "Kopiert");
+        button.setAttribute("data-bs-title", "Copied!");
         tooltip = new bootstrap.Tooltip(button, 
           { trigger: "manual", 
             customClass: "code-copy-button-tooltip",
